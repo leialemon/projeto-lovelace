@@ -26,11 +26,15 @@ public class Medicamento {
         dosagens.add(dosagem);
     }
 
+    public void adicionarApresentacao(Concentracao apresentacao) {
+        apresentacoes.add(apresentacao);
+    }
+
     public void setID(int id){
         this.ID = id;
     }
 
     public void calcularDose(){
-        
+
     }
 }

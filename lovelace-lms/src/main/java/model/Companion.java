@@ -7,4 +7,8 @@ public class Companion {
     String flag;
     String senha;
     List<Modulo> modulos;
+
+    public String getFlag(){
+        return this.flag;
+    }
 }

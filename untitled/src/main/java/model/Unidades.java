@@ -5,4 +5,5 @@ public enum Unidades {
     G,
     KG,
     ML,
+    GOTAS
 }
