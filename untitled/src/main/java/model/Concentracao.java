@@ -1,15 +1,15 @@
 package model;
 
 public class Concentracao {
-    String unidade1;
-    String unidade2;
+    Unidades unidade1;
+    Unidades unidade2;
     int numero;
 
-    public String getUnidade1(){
+    public Unidades getUnidade1(){
         return this.unidade1;
     }
 
-    public String getUnidade2(){
+    public Unidades getUnidade2(){
         return this.unidade2;
     }
 
