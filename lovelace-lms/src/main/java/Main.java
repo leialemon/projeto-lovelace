@@ -6,13 +6,17 @@ import service.CompanionService;
 import service.ModuloService;
 import service.Service;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args){
+        Scanner entrada = new Scanner(System.in);
+
         RepositorioCompanion companions = new RepositorioCompanion();
         Repositorio modulos = new RepositorioModulo();
 
         Companion companionAtivo = null;
-        boolean admin;
+        boolean admin = false;
         int argumentos = args.length;
         if (argumentos > 0){
             for (int i = 0; i < argumentos; i++){
@@ -21,7 +25,7 @@ public class Main {
                         companionAtivo = c;
                     }
                 }
-                if (args[i].equals("admin")){
+                if (args[i].equals("--admin")){
                     admin = true;
                 }
             }
@@ -29,6 +33,33 @@ public class Main {
         Service companionService = new CompanionService(companions, modulos, companionAtivo);
         Service moduloService = new ModuloService(modulos);
 
+        if(admin && companionAtivo != null){
+            if (!checarSenha(entrada, companionAtivo)){
+                System.out.println("Senha de administrador inválida");
+                System.out.println("Encerrando o programa.");
+                return;
+            }
+        }
 
+
+    }
+
+    public static boolean checarSenha(Scanner entrada, Companion companion){
+        boolean senhaCorreta = false;
+        boolean sair = false;
+        do{
+            System.out.println("Por favor, digite sua senha de administrador:");
+            if (entrada.nextLine().equals(companion.getSenha())){
+                senhaCorreta = true;
+                return senhaCorreta;
+            }
+            System.out.println("Senha incorreta! Digite 1 para tentar novamente ou 2 para sair do programa");
+            if (entrada.nextInt() == 2){
+                sair = true;
+                break;
+            }
+        }while (!senhaCorreta || sair);
+
+        return senhaCorreta;
     }
 }
