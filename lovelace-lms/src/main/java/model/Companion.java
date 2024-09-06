@@ -25,4 +25,8 @@ public class Companion {
     public List<Modulo> getModulos(){
         return this.modulos;
     }
+
+    public void addModulo(Modulo modulo){
+        modulos.add(modulo);
+    }
 }

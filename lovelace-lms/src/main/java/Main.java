@@ -62,4 +62,8 @@ public class Main {
 
         return senhaCorreta;
     }
+
+    public static void instanciarPoo(){
+
+    }
 }

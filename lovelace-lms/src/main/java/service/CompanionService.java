@@ -8,8 +8,11 @@ import java.util.List;
 public class CompanionService implements Service{
     private Repositorio repositorioCompanion;
     private Repositorio repositorioModulo;
+    private Companion companionAtivo;
+
     public CompanionService(Repositorio repositorioCompanion, Repositorio repositorioModulo, Companion companionAtivo){
         this.repositorioCompanion = repositorioCompanion;
         this.repositorioModulo = repositorioModulo;
+        this.companionAtivo = companionAtivo;
     }
 }

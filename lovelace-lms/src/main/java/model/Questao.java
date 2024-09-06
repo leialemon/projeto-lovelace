@@ -1,9 +1,12 @@
 package model;
 
-import java.util.List;
-
-public class Questao {
+public abstract class Questao {
     String enunciado;
-    String respostaCerta;
-    List<String> alternativas;
+
+    public Questao(String enunciado) {
+        this.enunciado = enunciado;
+    }
+
+    // equals? toString?
+
 }
