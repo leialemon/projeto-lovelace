@@ -1,9 +1,10 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Exercicio {
-    List<Questao> questoes;
+    List<Questao> questoes = new ArrayList<>();
 
 // Overloading do método addQuestao permite adicionar questões ao exercício individualmente ou em grupo
 public void addQuestao(Questao questao){

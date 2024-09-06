@@ -13,6 +13,7 @@ public class ConteudoPOO {
     public static Companion instanciar(){
         Companion pootato = new Companion("Pootato", "--pootato", "admin");
         Modulo poo1 = new Modulo("Programação Orientada a Objetos I");
+        pootato.addModulo(poo1);
         Tema intro = new Tema("Introdução à Programação Orientada a Objetos");
         poo1.addTema(intro);
         

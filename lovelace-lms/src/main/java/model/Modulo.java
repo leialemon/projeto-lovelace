@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Modulo {
@@ -7,6 +8,7 @@ public class Modulo {
     List<Tema> temas;
     public Modulo(String nome){
         this.nome = nome;
+        temas = new ArrayList<>();
     }
 
     public void addTema(Tema tema){

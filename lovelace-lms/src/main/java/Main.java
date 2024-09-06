@@ -1,4 +1,5 @@
 import model.Companion;
+import model.ConteudoPOO;
 import repository.Repositorio;
 import repository.RepositorioCompanion;
 import repository.RepositorioModulo;
@@ -11,8 +12,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
-
+        Companion pootato = ConteudoPOO.instanciar();
         RepositorioCompanion companions = new RepositorioCompanion();
+        companions.adicionar(pootato);
         Repositorio modulos = new RepositorioModulo();
 
         Companion companionAtivo = null;
@@ -41,6 +43,11 @@ public class Main {
             }
         }
 
+        if (companionAtivo != null){
+            if (companionAtivo.equals(pootato)) System.out.println("pootato ativo");
+        } else{
+            System.out.println("funcionando");
+        }
 
     }
 
@@ -63,7 +70,5 @@ public class Main {
         return senhaCorreta;
     }
 
-    public static void instanciarPoo(){
-
-    }
+    
 }

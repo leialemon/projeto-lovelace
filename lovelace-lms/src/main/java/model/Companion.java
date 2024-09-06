@@ -1,12 +1,13 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Companion {
     String nome;
     String flag;
     String senha;
-    List<Modulo> modulos;
+    List<Modulo> modulos = new ArrayList<>();
 
     public Companion(String nome, String flag, String senha){
         this.nome = nome;
