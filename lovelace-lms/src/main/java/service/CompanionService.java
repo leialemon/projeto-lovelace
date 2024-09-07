@@ -28,6 +28,10 @@ public class CompanionService implements Service<Companion>{
             repositorioCompanion.editar(c);
         }
     };
-    public void mostrar(Companion c){};
+    public void mostrar(Companion c){
+        if (c != null){
+            repositorioCompanion.buscar(c);
+        }
+    };
 }
 

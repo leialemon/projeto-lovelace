@@ -18,7 +18,9 @@ public class RepositorioCompanion extends RepositorioImpl<Companion>{
         companions.add(companion);
         flags.add(companion.getFlag());
     }
-    public void buscar(Companion companion){}
+    public void buscar(Companion companion){
+        
+    }
     public void editar (Companion companion){}
     public void apagar(Companion companion){}
 }

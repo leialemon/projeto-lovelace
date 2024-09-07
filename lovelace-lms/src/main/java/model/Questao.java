@@ -5,4 +5,5 @@ public interface Questao {
     public String getResposta();
     public void setResposta(String reposta);
     public boolean corrigir(String entrada);
+    public boolean equals(Object obj);
 }

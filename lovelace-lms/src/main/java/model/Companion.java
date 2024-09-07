@@ -15,12 +15,19 @@ public class Companion {
         this.senha = senha;
     }
 
+    public String getNome(){
+        if (this.nome != null) return this.nome;
+        else return "Nome não informado.";
+    }
+
     public String getFlag(){
-        return this.flag;
+        if (this.flag != null)return this.flag;
+        else return "Flag não informada.";
     }
 
     public String getSenha(){
-        return this.senha;
+        if (senha != null)return this.senha;
+        else return "Senha não informada.";
     }
 
     public List<Modulo> getModulos(){
@@ -28,6 +35,13 @@ public class Companion {
     }
 
     public void addModulo(Modulo modulo){
-        modulos.add(modulo);
+        if (modulo != null) modulos.add(modulo);
+    }
+
+    public boolean equals(Object obj){
+        if (obj == null || !(obj instanceof Companion)) return false;
+        Companion c = (Companion) obj;
+        if (this.nome.equals(c.getNome()) && this.flag.equals(c.getFlag()) && this.senha.equals(c.getSenha())) return true;
+        return false;
     }
 }
