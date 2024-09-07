@@ -3,9 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestaoFechada extends Questao{
+public class QuestaoFechada extends QuestaoImpl{
     
-    String respostaCerta;
     List<String> alternativas;
     
      public QuestaoFechada(String enunciado){
@@ -13,13 +12,12 @@ public class QuestaoFechada extends Questao{
          this.alternativas = new ArrayList<>();  
      }
 
-     public void addAlternativaCorreta(String resposta){
-        this.respostaCerta = resposta;
-     }
 
      public void addAlternativas(String alternativa){
         this.alternativas.add(alternativa);
      }
 
-     // método para selecionar posição aleatória da resposta correta.
+     public List<String> getAlternativas(){
+      return this.alternativas;
+     }
 }

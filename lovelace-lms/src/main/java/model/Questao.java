@@ -1,12 +1,8 @@
 package model;
 
-public abstract class Questao {
-    String enunciado;
-
-    public Questao(String enunciado) {
-        this.enunciado = enunciado;
-    }
-
-    // equals? toString?
-
+public interface Questao {
+    public String getEnunciado();
+    public String getResposta();
+    public void setResposta(String reposta);
+    public boolean corrigir(String entrada);
 }

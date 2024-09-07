@@ -16,6 +16,8 @@ public class Main {
         RepositorioCompanion companions = new RepositorioCompanion();
         companions.adicionar(pootato);
         Repositorio modulos = new RepositorioModulo();
+        //iniciar service para salvar no repositório;
+
 
         Companion companionAtivo = null;
         boolean admin = false;
@@ -50,7 +52,6 @@ public class Main {
             System.out.println("funcionando");
         }
 
-    
 
     }
 

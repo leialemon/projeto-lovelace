@@ -1,21 +1,10 @@
 package model;
 
-public class QuestaoAberta extends Questao{
+public class QuestaoAberta extends QuestaoImpl{
     
-    String resposta;
     
     public QuestaoAberta(String enunciado, String resposta){
             super(enunciado);
-            this.resposta = resposta;
+            this.setResposta(resposta);
         }
-    
-    public boolean checarResposta(String entrada){
-        boolean correta = this.resposta.equals(entrada);
-        return correta;
-    }
-
-    public String getResposta(){
-        return this.resposta;
-    }
-
 }

@@ -59,37 +59,37 @@ public class ConteudoPOO {
 
         // Instanciando e adicionando exercícios ao tema
         QuestaoFechada p1 = new QuestaoFechada("O que é um paradigma de programação?");
-        p1.addAlternativaCorreta("Um estilo ou abordagem para resolver problemas através da programação.");
+        p1.setResposta("Um estilo ou abordagem para resolver problemas através da programação.");
         p1.addAlternativas("Uma ferramenta de programação utilizada para depurar códigos."); 
         p1.addAlternativas("Um tipo de erro comum em linguagens de programação orientadas a objetos.");
         p1.addAlternativas("Uma linguagem de programação específica usada em sistemas de banco de dados.");
         
         QuestaoFechada p2 = new QuestaoFechada("Na Programação Orientada a Objetos (POO), o que é uma classe?");
-        p2.addAlternativaCorreta("Um molde ou modelo que define atributos e métodos para criar objetos.");
+        p2.setResposta("Um molde ou modelo que define atributos e métodos para criar objetos.");
         p2.addAlternativas("Um bloco de código que executa uma tarefa específica.");
         p2.addAlternativas("Um tipo de dado que armazena múltiplos valores.");
         p2.addAlternativas("Um processo que permite que um programa interaja com o sistema operacional.");
 
         QuestaoFechada p3 = new QuestaoFechada("Qual das alternativas abaixo é uma vantagem da Programação Orientada a Objetos?");
-        p3.addAlternativaCorreta("Melhora a organização e manutenção do código.");
+        p3.setResposta("Melhora a organização e manutenção do código.");
         p3.addAlternativas("Reduz o tempo de execução dos programas.");
         p3.addAlternativas("Facilita a depuração automática de código.");
         p3.addAlternativas("Elimina a necessidade de escrever código repetitivo.");
 
         QuestaoFechada p4 = new QuestaoFechada("Qual é a principal diferença entre Programação Procedural e Programação Orientada a Objetos?");
-        p4.addAlternativaCorreta("A Programação Procedural organiza o código em torno de funções, enquanto a POO organiza o código em torno de objetos.");
+        p4.setResposta("A Programação Procedural organiza o código em torno de funções, enquanto a POO organiza o código em torno de objetos.");
         p4.addAlternativas("A Programação Procedural é usada apenas em linguagens de baixo nível, enquanto a POO é usada em linguagens de alto nível.");
         p4.addAlternativas("A Programação Procedural não permite reutilização de código, enquanto a POO não permite modularidade.");
         p4.addAlternativas("A Programação Procedural só pode ser usada em sistemas operacionais específicos, enquanto a POO é multiplataforma.");
 
         QuestaoFechada p5 = new QuestaoFechada("Qual dos exemplos a seguir melhor representa a Programação Orientada a Objetos?");
-        p5.addAlternativaCorreta("Definir uma classe Carro com atributos como marca, modelo, e métodos como acelerar.");
+        p5.setResposta("Definir uma classe Carro com atributos como marca, modelo, e métodos como acelerar.");
         p5.addAlternativas("Escrever um script que processa uma lista de números em ordem crescente.");
         p5.addAlternativas("Criar uma função que calcula a média de um conjunto de valores.");
         p5.addAlternativas("Escrever um código que imprime \"Olá, Mundo!\" na tela.");
 
         // Criando um exercício com essas questões
-        List<Questao> questoes = new ArrayList<Questao>(Arrays.asList(p1,p2,p3,p4,p5));
+        List<QuestaoImpl> questoes = new ArrayList<QuestaoImpl>(Arrays.asList(p1,p2,p3,p4,p5));
         Exercicio e1 = new Exercicio();
         e1.addQuestao(questoes);
 
