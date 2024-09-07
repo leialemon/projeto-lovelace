@@ -38,6 +38,7 @@ public class Companion {
         if (modulo != null) modulos.add(modulo);
     }
 
+    @Override
     public boolean equals(Object obj){
         if (obj == null || !(obj instanceof Companion)) return false;
         Companion c = (Companion) obj;

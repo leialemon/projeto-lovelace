@@ -24,7 +24,7 @@ public class Main {
         int argumentos = args.length;
         if (argumentos > 0){
             for (int i = 0; i < argumentos; i++){
-                for (Companion c : companions.getCompanions()){
+                for (Companion c : companions.getList()){
                     if(args[i].equals(c.getFlag())){
                         companionAtivo = c;
                     }

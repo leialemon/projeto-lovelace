@@ -29,4 +29,12 @@ public class Tema {
         return this.texto;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if (obj == null || !(obj instanceof Tema)) return false;
+        Tema t = (Tema) obj;
+        if (this.getNome().equals(t.getNome())) return true;
+        return false;
+    }
+
 }
