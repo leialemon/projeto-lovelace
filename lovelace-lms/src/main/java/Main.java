@@ -35,7 +35,7 @@ public class Main {
                 }
             }
         }
-        Service companionService = new CompanionService(companions, companionAtivo);
+        Service companionService = new CompanionService(companions);
         Service moduloService = new ModuloService(modulos);
 
         if(admin == true && companionAtivo != null){

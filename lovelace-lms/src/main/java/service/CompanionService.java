@@ -8,7 +8,7 @@ import repository.RepositorioCompanion;
 public class CompanionService implements Service<Companion>{
     private Repositorio<Companion> repositorioCompanion;
 
-    public CompanionService(RepositorioCompanion repo, Companion compAtivo){
+    public CompanionService(RepositorioCompanion repo){
         this.setRepositorio(repo);
     }
 
