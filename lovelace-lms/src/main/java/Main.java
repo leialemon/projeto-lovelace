@@ -29,13 +29,14 @@ public class Main {
                 }
                 if (args[i].equals("--admin")){
                     admin = true;
+                    System.out.println("admin");
                 }
             }
         }
         Service companionService = new CompanionService(companions, modulos, companionAtivo);
         Service moduloService = new ModuloService(modulos);
 
-        if(admin && companionAtivo != null){
+        if(admin == true && companionAtivo != null){
             if (!checarSenha(entrada, companionAtivo)){
                 System.out.println("Senha de administrador inválida");
                 System.out.println("Encerrando o programa.");
