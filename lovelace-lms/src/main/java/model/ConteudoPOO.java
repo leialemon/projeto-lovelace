@@ -95,7 +95,6 @@ public class ConteudoPOO {
 
         //Adicionando o exercício ao tema
         intro.addExercicio(e1);
-        TextoView.mostrarTexto(intro);
         return pootato;
     }
 }

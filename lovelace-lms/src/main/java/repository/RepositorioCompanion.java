@@ -5,7 +5,7 @@ import model.Companion;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioCompanion implements Repositorio<Companion>{
+public class RepositorioCompanion extends RepositorioImpl<Companion>{
 
     List<Companion> companions = new ArrayList<>();
     List<String> flags = new ArrayList<>();

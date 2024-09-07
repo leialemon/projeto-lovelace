@@ -4,7 +4,7 @@ import model.Modulo;
 
 import java.util.List;
 
-public class RepositorioModulo implements Repositorio<Modulo>{
+public class RepositorioModulo extends RepositorioImpl<Modulo>{
     List<Modulo> modulos;
 
     public List<Modulo> getModulos(){

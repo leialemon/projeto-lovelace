@@ -15,7 +15,7 @@ public class Main {
         Companion pootato = ConteudoPOO.instanciar();
         RepositorioCompanion companions = new RepositorioCompanion();
         companions.adicionar(pootato);
-        Repositorio modulos = new RepositorioModulo();
+        RepositorioModulo modulos = new RepositorioModulo();
         //iniciar service para salvar no repositório;
 
 
@@ -35,7 +35,7 @@ public class Main {
                 }
             }
         }
-        Service companionService = new CompanionService(companions, modulos, companionAtivo);
+        Service companionService = new CompanionService(companions, companionAtivo);
         Service moduloService = new ModuloService(modulos);
 
         if(admin == true && companionAtivo != null){
