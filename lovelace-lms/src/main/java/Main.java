@@ -50,6 +50,8 @@ public class Main {
             System.out.println("funcionando");
         }
 
+    
+
     }
 
     public static boolean checarSenha(Scanner entrada, Companion companion){

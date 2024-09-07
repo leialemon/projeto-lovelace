@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Tema {
     String nome;
     List<String> texto = new ArrayList<>();
@@ -22,6 +23,10 @@ public class Tema {
 
     public String getNome(){
         return this.nome;
+    }
+
+    public List<String> getTexto(){
+        return this.texto;
     }
 
 }

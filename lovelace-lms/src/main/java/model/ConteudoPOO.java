@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import view.TextoView;
+
 public class ConteudoPOO {
 
 // Classe criada para deixar uma instância de companion pronta para demonstração no ato de submissão do projeto.
@@ -19,17 +21,17 @@ public class ConteudoPOO {
         
         // Adição de texto ao tema
         intro.addParagrafo("A Programação Orientada a Objetos (POO) é um paradigma de programação que organiza o desenvolvimento de software em torno de objetos, em vez de funções e lógica. Esses objetos são instâncias de classes, que podem ser vistas como moldes ou modelos que definem características (atributos) e comportamentos (métodos) que os objetos criados a partir delas terão.");
-        intro.addParagrafo("O que é um Paradigma de Programação?\n" + //
+        intro.addParagrafo("### O que é um Paradigma de Programação? ###\n" + //
                         "\n" + //
                         "Um paradigma de programação é um estilo ou abordagem para a resolução de problemas através da programação. Assim como diferentes idiomas têm suas próprias regras gramaticais, diferentes paradigmas de programação têm suas próprias regras e formas de pensar sobre como construir e organizar código.");
-        intro.addParagrafo("Os principais paradigmas de programação incluem:\n" + //
+        intro.addParagrafo("### Os principais paradigmas de programação incluem: ###\n" + //
                         "\n" + //
-                        "    Programação Procedural: Baseia-se na execução sequencial de instruções. O foco está em funções e procedimentos que manipulam dados. Exemplo: Linguagens como C e Pascal.\n" + //
+                        "    - Programação Procedural: Baseia-se na execução sequencial de instruções. O foco está em funções e procedimentos que manipulam dados. Exemplo: Linguagens como C e Pascal.\n" + //
                         "\n" + //
-                        "    Programação Funcional: Foca em funções matemáticas e evita estados mutáveis e efeitos colaterais. Exemplo: Haskell e Lisp.\n" + //
+                        "    - Programação Funcional: Foca em funções matemáticas e evita estados mutáveis e efeitos colaterais. Exemplo: Haskell e Lisp.\n" + //
                         "\n" + //
-                        "    Programação Orientada a Objetos: Estrutura o software em torno de objetos que interagem entre si. Exemplo: Java, Python e C++.");
-        intro.addParagrafo("Diferença entre POO e Programação Procedural\n" + //
+                        "    - Programação Orientada a Objetos: Estrutura o software em torno de objetos que interagem entre si. Exemplo: Java, Python e C++.");
+        intro.addParagrafo("### Diferença entre POO e Programação Procedural ###\n" + //
                         "\n" + //
                         "A principal diferença entre a Programação Orientada a Objetos e a Programação Procedural está na forma como os problemas são modelados e resolvidos:");
         intro.addParagrafo("Programação Procedural: O foco está em dividir o programa em um conjunto de funções ou procedimentos. Cada função realiza uma tarefa específica, e os dados são passados entre essas funções.\n" + //
@@ -39,17 +41,17 @@ public class ConteudoPOO {
                         "Programação Orientada a Objetos: O foco está em modelar o problema através de objetos que representam entidades do mundo real ou conceitos abstratos. Esses objetos contêm tanto dados quanto comportamentos.\n" + //
                         "\n" + //
                         "    Exemplo: No mesmo sistema de controle de estoque, poderíamos ter uma classe Produto, com atributos como nome, quantidade, e métodos como adicionarEstoque, removerEstoque. Cada produto seria um objeto com seus próprios dados e comportamentos, facilitando a organização e manutenção do código.");
-        intro.addParagrafo("Por que usar POO?\n" + //
+        intro.addParagrafo("### Por que usar POO? ###\n" + //
                         "\n" + //
                         "A POO é amplamente utilizada por oferecer várias vantagens:\n" + //
                         "\n" + //
-                        "    Reuso de Código: Com a POO, é possível criar classes genéricas e reutilizá-las em diferentes partes de um programa ou em diferentes projetos.\n" + //
+                        "    - Reuso de Código: Com a POO, é possível criar classes genéricas e reutilizá-las em diferentes partes de um programa ou em diferentes projetos.\n" + //
                         "\n" + //
-                        "    Organização e Manutenção: A POO permite uma melhor organização do código, tornando-o mais fácil de entender e manter. Classes e objetos proporcionam uma estrutura natural para modelar problemas complexos.\n" + //
+                        "    - Organização e Manutenção: A POO permite uma melhor organização do código, tornando-o mais fácil de entender e manter. Classes e objetos proporcionam uma estrutura natural para modelar problemas complexos.\n" + //
                         "\n" + //
-                        "    Flexibilidade: Através da herança e polimorfismo, a POO permite que o código seja flexível e extensível. Novas funcionalidades podem ser adicionadas sem alterar o código existente.\n" + //
+                        "    - Flexibilidade: Através da herança e polimorfismo, a POO permite que o código seja flexível e extensível. Novas funcionalidades podem ser adicionadas sem alterar o código existente.\n" + //
                         "\n" + //
-                        "    Representação do Mundo Real: A POO facilita a modelagem de problemas reais, pois objetos em código podem representar diretamente entidades do mundo real ou conceitos abstratos, tornando o software mais intuitivo e natural de desenvolver.");   
+                        "    - Representação do Mundo Real: A POO facilita a modelagem de problemas reais, pois objetos em código podem representar diretamente entidades do mundo real ou conceitos abstratos, tornando o software mais intuitivo e natural de desenvolver.");   
         intro.addParagrafo("Conclusão\n" + //
                         "\n" + //
                         "A Programação Orientada a Objetos é uma poderosa abordagem de desenvolvimento de software que organiza o código em torno de objetos que possuem atributos e métodos. Com uma estrutura que favorece a reutilização de código, a organização e a manutenção, a POO é amplamente utilizada em projetos de software modernos, sendo essencial para o desenvolvimento de sistemas complexos e escaláveis.");             
@@ -93,6 +95,7 @@ public class ConteudoPOO {
 
         //Adicionando o exercício ao tema
         intro.addExercicio(e1);
+        TextoView.mostrarTexto(intro);
         return pootato;
     }
 }
