@@ -1,6 +1,5 @@
 import model.Companion;
-import model.ConteudoPOO;
-import repository.Repositorio;
+import model.ZConteudoPOO;
 import repository.RepositorioCompanion;
 import repository.RepositorioModulo;
 import service.CompanionService;
@@ -9,10 +8,15 @@ import service.Service;
 
 import java.util.Scanner;
 
-public class Main {
+public class Lovelace {
+
+    // Dois modos de acesso: aluno e admin;
+    // Aluno apenas lê as coisas e responde questões;
+    // Admin consegue criar e editar
+
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
-        Companion pootato = ConteudoPOO.instanciar();
+        Companion pootato = ZConteudoPOO.instanciar();
         RepositorioCompanion companions = new RepositorioCompanion();
         companions.adicionar(pootato);
         RepositorioModulo modulos = new RepositorioModulo();
@@ -51,6 +55,8 @@ public class Main {
         } else{
             System.out.println("funcionando");
         }
+
+        // Permitir que se acesse os companions nos dois modos através do menu. As flags são apenas um atalho.
 
 
     }

@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import view.TextoView;
 
-public class ConteudoPOO {
+public class ZConteudoPOO {
 
 // Classe criada para deixar uma instância de companion pronta para demonstração no ato de submissão do projeto.
 // Tendo em vista que não é possível trabalhar com banco de dados, preparamos o código para instanciar automaticamente um companion quando for iniciado, 
