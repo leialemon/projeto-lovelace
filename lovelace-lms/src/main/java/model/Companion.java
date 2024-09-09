@@ -20,6 +20,10 @@ public class Companion {
         this.avatar = String.format(robo, this.nome);
     }
 
+    public String getAvatar(){
+        return this.avatar;
+    }
+
     public String getNome(){
         if (this.nome != null) return this.nome;
         else return "Nome não informado.";

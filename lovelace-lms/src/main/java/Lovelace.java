@@ -9,7 +9,7 @@ public class Lovelace {
     // Dois modos de acesso: aluno e admin;
     // Aluno apenas lê as coisas e responde questões;
     // Admin consegue criar e editar
-    // Main: 1.checar os argumentos da linha de comando; 2. Instanciar Menus; 
+    // Atribuições do método main: 1.checar os argumentos da linha de comando; 2. Instanciar Menus; 
 
     public static void main(String[] args){
         Scanner entrada = new Scanner(System.in);
@@ -18,8 +18,6 @@ public class Lovelace {
         RepositorioCompanion companions = menu.getRepositorioCompanion();
         companions.adicionar(pootato);
         
-        //iniciar service para salvar no repositório;
-
 
         Companion companionAtivo = null;
         boolean admin = false;
@@ -42,13 +40,13 @@ public class Lovelace {
                 System.out.println("Senha de administrador inválida");
                 System.out.println("Encerrando o programa.");
                 return;
+            } else {
+                menu.chamarMenuAdmin(companionAtivo);
             }
-        }
-
-        if (companionAtivo != null){
-            if (companionAtivo.equals(pootato)) System.out.println("pootato ativo");
-        } else{
-            System.out.println("funcionando");
+        } else if (companionAtivo != null){
+            menu.chamarMenuAluno(companionAtivo);
+        } else {
+            menu.chamarMenus();
         }
 
         // Permitir que se acesse os companions nos dois modos através do menu. As flags são apenas um atalho.

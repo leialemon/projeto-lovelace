@@ -2,8 +2,11 @@ package controller;
 
 import repository.*;
 import service.*;
+import model.*;
 
 public class MenuImpl implements Menu{
+    Companion companionAtivo;
+        
     RepositorioCompanion companions = new RepositorioCompanion();
     RepositorioModulo modulos = new RepositorioModulo();
     RepositorioTema temas = new RepositorioTema();
@@ -29,4 +32,21 @@ public class MenuImpl implements Menu{
         return this.questoes;
     }
 
+    public void setCompanionAtivo(Companion c){
+        this.companionAtivo = c;
+    }
+
+    public void chamarMenus(){
+        // menus genéricos para seleção de companion e modo
+    }
+
+    public void chamarMenuAluno(Companion companionAtivo){
+        MenuAluno menuAluno = new MenuAluno(companionAtivo);
+        menuAluno.mostrarMenuInicial();
+    }
+
+    public void chamarMenuAdmin(Companion companionAtivo){
+        MenuAdmin menuAdmin = new MenuAdmin(companionAtivo);
+        menuAdmin.mostrarMenuInicial();
+    }
 }

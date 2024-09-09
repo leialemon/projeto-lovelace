@@ -1,5 +1,6 @@
 package controller;
 
+import model.Companion;
 import repository.RepositorioCompanion;
 import repository.RepositorioModulo;
 import repository.RepositorioQuestoes;
@@ -10,4 +11,7 @@ public interface Menu {
     public RepositorioModulo getRepositorioModulo();
     public RepositorioTema getRepositorioTema();
     public RepositorioQuestoes getRepositorioQuestoes();
+    public void chamarMenus();
+    public void chamarMenuAdmin(Companion companionAtivo);
+    public void chamarMenuAluno(Companion companionAtivo);
 } 

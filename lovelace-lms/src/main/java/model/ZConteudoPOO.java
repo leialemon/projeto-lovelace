@@ -94,6 +94,8 @@ public class ZConteudoPOO {
 
         //Adicionando o exercício ao tema
         intro.addExercicio(e1);
+
+        pootato.setAvatar(Avatar.getRobo1());
         return pootato;
     }
 }
