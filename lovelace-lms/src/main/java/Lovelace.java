@@ -52,17 +52,5 @@ public class Lovelace {
         }
 
         // Permitir que se acesse os companions nos dois modos através do menu. As flags são apenas um atalho.
-
-        
-        
-        String robo4 = """
-                    /            Olá!      
-                   ["]  ,<     Eu sou %s, seu Companion de aprendizado!
-                   [~]\\/      
-                   OOO        
-                           """;      
-    
-        robo4 = String.format(robo4, "Pootato");
-        System.out.println(robo4);
-                        }    
+    }    
 }
