@@ -2,10 +2,6 @@ import model.Companion;
 import model.ZConteudoPOO;
 import repository.RepositorioCompanion;
 import repository.RepositorioModulo;
-import service.CompanionService;
-import service.ModuloService;
-import service.Service;
-
 import java.util.Scanner;
 
 public class Lovelace {
@@ -39,8 +35,6 @@ public class Lovelace {
                 }
             }
         }
-        Service companionService = new CompanionService(companions);
-        Service moduloService = new ModuloService(modulos);
 
         if(admin == true && companionAtivo != null){
             if (!checarSenha(entrada, companionAtivo)){
