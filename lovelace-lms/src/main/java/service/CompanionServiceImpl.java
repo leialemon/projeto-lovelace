@@ -10,6 +10,10 @@ public class CompanionServiceImpl extends ServiceImpl<Companion> implements Comp
         super.setRepositorio(repo);
     }
 
+    public void escolherAvatar(Companion c, String avatar){
+        c.setAvatar(avatar);
+    }
+
     public void criar(Companion c){
         super.criar(bancoCompanions, c);
     };

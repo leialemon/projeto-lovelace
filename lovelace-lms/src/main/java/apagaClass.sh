@@ -11,3 +11,4 @@ rm *.class
 cd ../service 
 rm *.class
 
+cd ..

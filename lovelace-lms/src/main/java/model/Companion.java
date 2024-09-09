@@ -7,12 +7,17 @@ public class Companion {
     String nome;
     String flag;
     String senha;
+    String avatar;
     List<Modulo> modulos = new ArrayList<>();
 
     public Companion(String nome, String flag, String senha){
         this.nome = nome;
         this.flag = flag;
         this.senha = senha;
+    }
+
+    public void setAvatar(String robo){
+        this.avatar = String.format(robo, this.nome);
     }
 
     public String getNome(){

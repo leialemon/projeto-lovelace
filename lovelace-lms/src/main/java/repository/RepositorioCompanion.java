@@ -15,6 +15,10 @@ public class RepositorioCompanion implements Repositorio<Companion>{
         return this.bancoDeCompanions;
     };
 
+    public List<String> getFlags(){
+        return this.flags;
+    }
+
     @Override
     public void adicionar(Companion companion){
         bancoDeCompanions.add(companion);
