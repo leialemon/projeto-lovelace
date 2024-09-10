@@ -1,12 +1,14 @@
-package controller;
+package view;
 
+import controller.ValidadorDeEntradas;
 import model.*;
-import view.*;
+import service.ServiceImpl;
 
 public class MenuAluno extends MenuImpl{
-    
-    public MenuAluno(Companion companionAtivo){
-        this.companionAtivo = companionAtivo;
+    Companion companionAtivo;
+
+    public MenuAluno (Companion c){
+        this.companionAtivo = c;
     }
 
     public void mostrarMenuInicial(){
@@ -15,7 +17,7 @@ public class MenuAluno extends MenuImpl{
         CompanionView.mostrarModulos(companionAtivo);
         int opcao = ValidadorDeEntradas.validarOpcoes(0, companionAtivo.getModulos().size());
         if (opcao == 0){
-            return;
+            super.chamarMenus();
         } else this.mostrarModulo(companionAtivo.getModulos().get(opcao-1));
         //adicionar opção de apenas fazer exercícios?
     }
@@ -26,7 +28,7 @@ public class MenuAluno extends MenuImpl{
         int menuAnterior = (modulo.getTemas().size()+1);
         int opcao = ValidadorDeEntradas.validarOpcoes(0, menuAnterior);
         if (opcao == 0){
-            return;
+            super.chamarMenus();
         } else if (opcao == 1){
             this.mostrarMenuInicial();
         } else this.mostrarTema(modulo.getTemas().get(opcao-1));

@@ -1,8 +1,10 @@
 import model.Companion;
 import model.ZConteudoPOO;
-import repository.*;
 import controller.*;
-import java.util.Scanner;
+import service.ServiceImpl;
+import view.MenuImpl;
+
+import java.util.List;
 
 public class Lovelace {
 
@@ -12,11 +14,13 @@ public class Lovelace {
     // Atribuições do método main: 1.checar os argumentos da linha de comando; 2. Instanciar Menus; 
 
     public static void main(String[] args){
-        Scanner entrada = new Scanner(System.in);
+
         Companion pootato = ZConteudoPOO.instanciar();
-        Menu menu = new MenuImpl();
-        RepositorioCompanion companions = menu.getRepositorioCompanion();
-        companions.adicionar(pootato);
+        ServiceImpl service = new ServiceImpl();
+        List<Companion> companions = service.getCompanions();
+        MenuImpl menu = new MenuImpl();
+        menu.setService(service);
+        service.getRepoCompanion().adicionar(pootato);
         
 
         Companion companionAtivo = null;
@@ -24,7 +28,7 @@ public class Lovelace {
         int argumentos = args.length;
         if (argumentos > 0){
             for (int i = 0; i < argumentos; i++){
-                for (Companion c : companions.getList()){
+                for (Companion c : companions){
                     if(args[i].equals(c.getFlag())){
                         companionAtivo = c;
                     }
@@ -35,8 +39,8 @@ public class Lovelace {
             }
         }
 
-        if(admin == true && companionAtivo != null){
-            if (!ValidadorDeEntradas.checarSenha(entrada, companionAtivo)){
+        if(admin && companionAtivo != null){
+            if (!ValidadorDeEntradas.checarSenha(companionAtivo)){
                 System.out.println("Senha de administrador inválida");
                 System.out.println("Encerrando o programa.");
                 return;
@@ -48,7 +52,5 @@ public class Lovelace {
         } else {
             menu.chamarMenus();
         }
-
-        // Permitir que se acesse os companions nos dois modos através do menu. As flags são apenas um atalho.
     }    
 }

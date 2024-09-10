@@ -1,74 +1,42 @@
 package service;
+import model.Companion;
+import model.Modulo;
+import model.Questao;
+import model.Tema;
+import repository.*;
 
-import repository.Repositorio;
-import repository.RepositorioCompanion;
-import repository.RepositorioModulo;
-import repository.RepositorioQuestoes;
-import repository.RepositorioTema;
+import java.util.List;
 
-public abstract class ServiceImpl<T> implements Service<T>{
-    protected RepositorioCompanion bancoCompanions;
-    protected RepositorioModulo bancoModulos;
-    protected RepositorioTema bancoTemas;
-    protected RepositorioQuestoes bancoQuestoes;
+public class ServiceImpl {
+    RepositorioCompanion repoCompanion;
+    RepositorioModulo repoModulo;
+    RepositorioTema repoTema;
+    RepositorioQuestoes repoQuestao;
 
-    @Override
-    public void setRepositorio(RepositorioCompanion repositorio) {
-        this.bancoCompanions = repositorio;
+    public ServiceImpl() {
+        repoCompanion = new RepositorioCompanion();
+        repoModulo = new RepositorioModulo();
+        repoTema = new RepositorioTema();
+        repoQuestao = new RepositorioQuestoes();
     }
 
-    public void setRepositorio(RepositorioModulo repositorio){
-        this.bancoModulos = repositorio;
+    public RepositorioCompanion getRepoCompanion(){
+        return this.repoCompanion;
     }
 
-    public void setRepositorio(RepositorioTema repositorio){
-        this.bancoTemas = repositorio;
+    public List<Companion> getCompanions(){
+        return this.repoCompanion.getList();
     }
 
-    public void setRepositorio(RepositorioQuestoes repositorio){
-        this.bancoQuestoes = repositorio;
+    public List<Modulo> getModulos(){
+        return this.repoModulo.getList();
     }
 
-    public RepositorioCompanion getRepositorioCompanion(){
-        return this.bancoCompanions;
+    public List<Tema> getTemas(){
+        return this.repoTema.getList();
     }
 
-    public RepositorioModulo getRepositorioModulo(){
-        return this.bancoModulos;
+    public List<Questao> getQuestoes(){
+        return this.repoQuestao.getList();
     }
-
-    public RepositorioTema getRepositorioTema(){
-        return this.bancoTemas;
-    }
-
-    public RepositorioQuestoes getRepositorioQuestoes(){
-        return this.bancoQuestoes;
-    }
-
-    @Override
-    public void criar(Repositorio<T> repo, T t) {
-       
-    }
-
-    @Override
-    public void excluir(Repositorio<T> repo, T t) {
-        if (t != null){
-            repo.apagar(t);
-        }
-    }
-
-    @Override
-    public void editar(Repositorio<T> repo, T t) {
-        if (t != null){
-            repo.editar(t);
-        }
-    }
-
-    @Override
-    public void mostrar(Repositorio<T> repo, T t) {
-        if (t != null){
-            repo.buscar(t);
-        }
-    }
-    
 }

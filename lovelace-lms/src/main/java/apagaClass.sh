@@ -11,4 +11,8 @@ rm *.class
 cd ../service 
 rm *.class
 
-cd ..
+cd ../view
+rm *.class
+
+cd ../controller
+rm *.class

@@ -7,7 +7,8 @@ import model.Companion;
 public class ValidadorDeEntradas {
     // Classe utilitária com métodos para validar entradas de usuário
 
-    public static boolean checarSenha(Scanner entrada, Companion companion) {
+    public static boolean checarSenha(Companion companion) {
+        Scanner entrada = new Scanner(System.in);
         boolean senhaCorreta = false;
         boolean sair = false;
         do {
