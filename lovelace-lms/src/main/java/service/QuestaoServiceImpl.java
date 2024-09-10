@@ -10,6 +10,7 @@ public class QuestaoServiceImpl extends ServiceImpl<Questao> implements QuestaoS
     }
 
     public void criar(Questao q){
+        // NÃO DEIXAR CRIAR QUESTOES COM MAIS DE 4 ALTERNATIVAS
         super.criar(bancoQuestoes, q);
     };
 

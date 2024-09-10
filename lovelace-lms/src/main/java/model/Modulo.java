@@ -18,6 +18,7 @@ public class Modulo {
 
     public void addTema(Tema tema){
         temas.add(tema);
+        tema.setModulo(this);
     }
 
     public List<Tema> getTemas(){

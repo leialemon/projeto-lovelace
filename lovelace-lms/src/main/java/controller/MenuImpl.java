@@ -1,10 +1,12 @@
 package controller;
 
+import java.util.Scanner;
 import repository.*;
 import service.*;
 import model.*;
 
 public class MenuImpl implements Menu{
+    Scanner entrada;
     Companion companionAtivo;
         
     RepositorioCompanion companions = new RepositorioCompanion();
@@ -15,6 +17,10 @@ public class MenuImpl implements Menu{
     CompanionService companionService = new CompanionServiceImpl(companions);
     ModuloService moduloService = new ModuloServiceImpl(modulos);
     QuestaoService questaoService = new QuestaoServiceImpl(questoes);
+
+    public MenuImpl(){
+        entrada = new Scanner(System.in);
+    }
     
     public RepositorioCompanion getRepositorioCompanion(){
         return this.companions;
@@ -38,11 +44,16 @@ public class MenuImpl implements Menu{
 
     public void chamarMenus(){
         // menus genéricos para seleção de companion e modo
+        //Selecionar Companion
+        //Criar Companion
+        //Criar Módulo 
+        //Cadastrar Questão
     }
 
     public void chamarMenuAluno(Companion companionAtivo){
         MenuAluno menuAluno = new MenuAluno(companionAtivo);
         menuAluno.mostrarMenuInicial();
+        
     }
 
     public void chamarMenuAdmin(Companion companionAtivo){

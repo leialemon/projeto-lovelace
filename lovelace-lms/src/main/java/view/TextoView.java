@@ -17,6 +17,7 @@ public class TextoView{
             System.out.println("(mostrar mais)");
             continuar.next();
         }
+        System.out.println("### FIM ###");
         continuar.close();
     }
 }

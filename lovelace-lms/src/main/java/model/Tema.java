@@ -8,6 +8,7 @@ public class Tema {
     String nome;
     List<String> texto = new ArrayList<>();
     Exercicio exercicio;
+    Modulo modulo;
 
     public Tema(String nome){
         this.nome = nome;
@@ -27,6 +28,18 @@ public class Tema {
 
     public List<String> getTexto(){
         return this.texto;
+    }
+
+    public Exercicio getExercicio(){
+        return this.exercicio;
+    }
+
+    public void setModulo(Modulo m){
+        this.modulo = m;
+    }
+
+    public Modulo getModulo(){
+        return this.modulo;
     }
 
     @Override
