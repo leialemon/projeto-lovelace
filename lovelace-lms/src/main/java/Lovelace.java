@@ -2,6 +2,7 @@ import model.Companion;
 import model.ZConteudoPOO;
 import controller.*;
 import service.ServiceImpl;
+import view.CompanionView;
 import view.MenuImpl;
 
 import java.util.List;
@@ -15,6 +16,8 @@ public class Lovelace {
 
     public static void main(String[] args){
 
+        System.out.println(CompanionView.getRobos());
+        System.out.println();
         Companion pootato = ZConteudoPOO.instanciar();
         ServiceImpl service = new ServiceImpl();
         List<Companion> companions = service.getCompanions();

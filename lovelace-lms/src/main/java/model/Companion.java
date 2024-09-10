@@ -15,6 +15,17 @@ public class Companion {
         this.flag = flag;
         this.senha = senha;
     }
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public void setFlag(String flag){
+        this.flag = flag;
+    }
+
+    public void setSenha(String senha){
+        this.senha = senha;
+    }
 
     public void setAvatar(String robo){
         this.avatar = String.format(robo, this.nome);

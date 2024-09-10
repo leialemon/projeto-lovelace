@@ -1,6 +1,7 @@
 package repository;
 
 import model.Companion;
+import service.Status;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +21,13 @@ public class RepositorioCompanion implements Repositorio<Companion>{
     }
 
     @Override
-    public void adicionar(Companion companion){
+    public Status adicionar(Companion companion){
+        if (buscar(companion)){
+            return Status.JA_EXISTE;
+        }
         bancoDeCompanions.add(companion);
         flags.add(companion.getFlag());
+        return Status.TUDO_CERTO;
     }
 
     @Override
