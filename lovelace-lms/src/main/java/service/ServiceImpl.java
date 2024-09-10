@@ -7,7 +7,7 @@ import repository.*;
 
 import java.util.List;
 
-public class ServiceImpl {
+public class ServiceImpl<T> implements Service<T>{
     RepositorioCompanion repoCompanion;
     RepositorioModulo repoModulo;
     RepositorioTema repoTema;
@@ -39,4 +39,10 @@ public class ServiceImpl {
     public List<Questao> getQuestoes(){
         return this.repoQuestao.getList();
     }
+
+    public void criar(T t) {}
+    public void excluir(T t) {}
+    public void editar(T t) {}
+    public T mostrar(T t) {
+        return null;}
 }
