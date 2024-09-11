@@ -1,4 +1,4 @@
-<img src="/Readme-content/boasvindas.png">
+<img style="margin-left: auto; margin-right: auto;" src="/Readme-content/boasvindas.png" alt="Print de um terminal onde está impresso o texto 'Boas-vindas ao Projeto Lovelace!';" >
 
 # 🤖 Projeto Lovelace
 #### LMS modular e minificado
@@ -14,26 +14,44 @@ Os requisitos de participação na hackaton podem ser conferidos [aqui.](https:/
 
 ## 📑 Instruções
 
+Para usar o Lovelace, você deve compilar e executar a classe java Lovelace.java. Isto pode ser feito de forma manual ou automática, através da execução do script bash [lovelace.sh](/lovelace.sh).
 
+A partir daí é possível usar o lovelace para criar novos companions ou acessar companions existentes. 
+
+O sistema de menus foi pensado para que a navegação fosse intuitiva e demandasse do usuário o mínimo de conhecimentos prévios sobre o programa.
+
+Ao acessar um companion, o usuário poderá fazê-lo no modo **Aluno** ou no modo **Administrador**.
+
+### 🔑 Modos de acesso
+O modo **aluno** é o modo padrão e permite apenas a visualização do conteúdo dos módulos do companion e a realização dos exercícios.
+
+Já o modo **administrador** permite a edição e exclusão do companion. Para acessar este modo, é preciso fornecer ao programa uma senha de administrador, configurada na criação do companion.
+
+### 🏁 Flags
+Ao criar um novo companion deve-se definir uma "flag", uma palavra-chave que pode ser usada de argumento no terminal para executar o Lovelace já com o companion selecionado.
+
+Para acessar um companion diretamente no modo administrador é preciso executar o programa com a flag do companion e a flag "--admin".
 
 ## 🥔 POOtato
-<img src="/Readme-content/pootato.png">
+
+<img style="margin-left: auto; margin-right: auto;" src="/Readme-content/pootato.png" alt="Print de um terminal onde aparece um robô impresso ASCII e o texto 'Olá! Eu sou o Pootato, seu companion de aprendizado!';" >
+
 
 O POOtato é um companion já criado injetado diretamente no código para que seja possível testar algumas funcionalidades do Lovelace.
 
 Para chamar o POOtato, você pode:
 1. Selecioná-lo no menu principal;
 2. Iniciar o programa na linha de comando com o argumento "--pootato";
-3. Executar o script pootato.sh.
+3. Executar o script [pootato.sh](/pootato.sh).
 
 Para entrar no modo de administrador do POOtato, você pode:
 1. Selecionar este modo no menu de acesso;
 2. Iniciar o programa na linha de comando com os argumentos "--pootato" e "--admin";
 
-🛂 A senha de administrador do POOtato é "admin".
+#### 🛂 A senha de administrador do POOtato é "admin".
 
 
-##### Créditos
+### Créditos
 Artes ASCII por: https://ascii.co.uk/art/robot
 
 Conteúdos do pootato criados pelo chatGPT com o GPT-4o.
