@@ -12,6 +12,7 @@ public class MenuAdmin {
     }
     // CONFERIR SENHA
     public void verificarAcesso() {
+        System.out.println("### " + companionAtivo.getNome() + " - Modo administrador ###");
         if (!ValidadorDeEntradas.checarSenha(companionAtivo)) {
             System.out.println("Senha de administrador inválida");
             System.out.println("Encerrando o programa.");

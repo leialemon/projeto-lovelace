@@ -13,7 +13,7 @@ public class Exercicio {
     }
 
     public void addQuestao(List<QuestaoImpl> questoes) {
-        questoes.addAll(questoes);
+        this.questoes.addAll(questoes);
     }
 
     public void removerQuestao(QuestaoImpl questao){
