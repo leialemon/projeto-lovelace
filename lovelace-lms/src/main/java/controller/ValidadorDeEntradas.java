@@ -19,6 +19,7 @@ public class ValidadorDeEntradas {
                 return senhaCorreta;
             }
             System.out.println("Senha incorreta! Digite 1 para tentar novamente ou 2 para sair do programa");
+            entrada.nextLine();
             int opcao = validarOpcoes(1,2);
             if (opcao == 2) {
                 sair = true;
@@ -29,7 +30,7 @@ public class ValidadorDeEntradas {
     }
 
     public static int validarOpcoes(int primeira, int ultima) {
-        Scanner entrada = Menu.entrada;
+        Scanner entrada = new Scanner(System.in);
         boolean valido = false;
         int opcao = 0;
         String opt;

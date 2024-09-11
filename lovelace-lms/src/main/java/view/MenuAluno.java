@@ -11,7 +11,11 @@ public class MenuAluno extends Menu {
     }
 
     public void mostrarMenuInicial(){
-        System.out.println(companionAtivo.getAvatar());
+        if (companionAtivo.getAvatar() != null){
+            System.out.println(companionAtivo.getAvatar());
+        } else {
+            System.out.println("Olá! Eu sou "+companionAtivo.getNome()+", seu companion de aprendizado!");
+        }
         System.out.println("Se quiser me chamar ao iniciar o programa, utilize a flag '" + companionAtivo.getFlag() + "' na linha de comando ao executar o lovelace:");
         System.out.println("java Lovelace " + companionAtivo.getFlag());
         System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do Companion:");

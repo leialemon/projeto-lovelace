@@ -12,13 +12,13 @@ public class TemaView {
     }
 
     public static Tema criarTema(){
-        Scanner entrada = Menu.entrada;
+        Scanner entrada = new Scanner(System.in);
         System.out.println("\n#########");
         System.out.println("Criação de Temas");
         System.out.println("\nDigite um nome para o tema, ele deve refletir o tópico abordado:");
-        String nome = entrada.next();
+        String nome = entrada.nextLine();
         Tema criado = new Tema(nome);
-        System.out.println("\n Agora vamos adicionar um texto didático ao seu Tema. Para facilitar a visualização dos usuários, este programa imprime o texto aos poucos, em parágrafos.");
+        System.out.println("\nAgora vamos adicionar um texto didático ao seu Tema. Para facilitar a visualização dos usuários, este programa imprime o texto aos poucos, em parágrafos.");
         System.out.println("Adicione o caractere '§' nos locais do seu texto onde você quer que o programa faça a quebra de parágrafo.");
         System.out.println("Digite o texto:");
         String texto = entrada.nextLine();
