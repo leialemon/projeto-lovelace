@@ -1,6 +1,7 @@
 package repository;
 
 import model.Companion;
+import model.Modulo;
 import service.Status;
 
 import java.util.ArrayList;
@@ -22,39 +23,35 @@ public class RepositorioCompanion implements Repositorio<Companion>{
 
     @Override
     public Status adicionar(Companion companion){
-        if (buscar(companion)){
+        if (this.buscar(companion) == Status.TUDO_CERTO){
             return Status.JA_EXISTE;
         }
-        bancoDeCompanions.add(companion);
-        flags.add(companion.getFlag());
+        this.bancoDeCompanions.add(companion);
+        this.flags.add(companion.getFlag());
         return Status.TUDO_CERTO;
     }
 
     @Override
-    public boolean buscar(Companion companion){
+    public Status buscar(Companion companion){
         if (companion == null){
             System.err.println("A pesquisa não pode ser feita com valores nulos!");
-            return false;
+            return Status.INSTANCIA_NULA;
         }        
-        for (Companion c : bancoDeCompanions){
-            if (companion.equals(c)) return true;
+        for (Companion c : this.bancoDeCompanions){
+            if (companion.equals(c)) return Status.TUDO_CERTO;
         }
-        return false;    
+        return Status.NAO_EXISTE;
     }
 
     @Override
-    public void editar (Companion companion){
-       
-
-    }
-
-    @Override
-    public void apagar(Companion companion){
-        for (Companion c : bancoDeCompanions){
-            if (companion.equals(c)){
-                bancoDeCompanions.remove(c);
+    public Status apagar(Companion companion){
+        for (Companion c : this.bancoDeCompanions){
+            if(companion.equals(c)){
+                this.flags.remove(c.getFlag());
+                this.bancoDeCompanions.remove(c);
+                return Status.TUDO_CERTO;
             }
         }
-
+        return Status.NAO_EXISTE;
     }
 }

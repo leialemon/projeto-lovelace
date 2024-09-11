@@ -1,6 +1,8 @@
 package repository;
 
 import model.Modulo;
+import model.Questao;
+import service.Status;
 
 import java.util.List;
 
@@ -12,23 +14,34 @@ public class RepositorioModulo implements Repositorio<Modulo>{
     }
 
     @Override
-    public void adicionar(Modulo modulo){}
-
-    @Override
-    public boolean buscar(Modulo modulo){
-        if (modulo == null){
-            System.err.println("A pesquisa não pode ser feita com valores nulos!");
-            return false;
-        }        
-        for (Modulo m : bancoDeModulos){
-            if (modulo.equals(m)) return true;
+    public Status adicionar(Modulo modulo){
+        if (this.buscar(modulo) == Status.TUDO_CERTO){
+            return Status.JA_EXISTE;
         }
-        return false;  
+        this.bancoDeModulos.add(modulo);
+        return Status.TUDO_CERTO;
     }
 
     @Override
-    public void editar (Modulo modulo){}
+    public Status buscar(Modulo modulo){
+        if (modulo == null){
+            System.err.println("A pesquisa não pode ser feita com valores nulos!");
+            return Status.INSTANCIA_NULA;
+        }        
+        for (Modulo m : bancoDeModulos){
+            if (modulo.equals(m)) return Status.TUDO_CERTO;
+        }
+        return Status.NAO_EXISTE;
+    }
 
     @Override
-    public void apagar(Modulo modulo){}
+    public Status apagar(Modulo modulo){
+        for (Modulo m : this.bancoDeModulos){
+            if(modulo.equals(m)){
+                this.bancoDeModulos.remove(m);
+                return Status.TUDO_CERTO;
+            }
+        }
+        return Status.NAO_EXISTE;
+    }
 }

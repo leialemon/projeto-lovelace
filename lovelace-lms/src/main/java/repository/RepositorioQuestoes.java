@@ -3,6 +3,7 @@ package repository;
 import java.util.ArrayList;
 import java.util.List;
 import model.*;
+import service.Status;
 
 public class RepositorioQuestoes implements Repositorio<Questao>{
     List<Questao> bancoDeQuestoes = new ArrayList<>();
@@ -13,25 +14,34 @@ public class RepositorioQuestoes implements Repositorio<Questao>{
     }
 
     @Override
-    public void adicionar(Questao questao){
-        this.bancoDeQuestoes.add(questao); 
+    public Status adicionar(Questao questao){
+        if (this.buscar(questao) == Status.TUDO_CERTO){
+            return Status.JA_EXISTE;
+        }
+        this.bancoDeQuestoes.add(questao);
+        return Status.TUDO_CERTO;
     }
     
     @Override
-    public boolean buscar(Questao questao){
+    public Status buscar(Questao questao){
         if (questao == null){
             System.err.println("A pesquisa não pode ser feita com valores nulos!");
-            return false;
+            return Status.INSTANCIA_NULA;
         }        
         for (Questao q : this.bancoDeQuestoes){
-            if (questao.equals(q)) return true;
+            if (questao.equals(q)) return Status.TUDO_CERTO;
         }
-        return false;  
+        return Status.NAO_EXISTE;
     }
 
     @Override
-    public void editar (Questao questao){}
-
-    @Override
-    public void apagar(Questao questao){}
+    public Status apagar(Questao questao){
+        for (Questao q : this.bancoDeQuestoes){
+            if(questao.equals(q)){
+                this.bancoDeQuestoes.remove(q);
+                return Status.TUDO_CERTO;
+            }
+        }
+        return Status.NAO_EXISTE;
+    }
 }
