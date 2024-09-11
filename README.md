@@ -51,7 +51,7 @@ Para entrar no modo de administrador do POOtato, você pode:
 🛂 A senha de administrador do POOtato é "admin".
 
 
-##### Créditos
+### Créditos
 Artes ASCII por: https://ascii.co.uk/art/robot
 
 Conteúdos do pootato criados pelo chatGPT com o GPT-4o.
