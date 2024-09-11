@@ -135,7 +135,8 @@ public class Menu {
 
     public void criarCompanion(){
         Companion criado = CompanionView.criarCompanion();
-        this.adicionarModulos(CompanionView.criarCompanion2(companionController.criar(criado), criado), criado);
+        companionController.criar(criado);
+        this.adicionarModulos(CompanionView.criarCompanion2(criado), criado);
         //Refatorar quando tiver tempo
     }
 
