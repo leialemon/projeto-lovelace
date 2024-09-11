@@ -1,5 +1,5 @@
 <div style = "text-align: center;">
-<img src="/Readme-content/boasvindas.png"; alt="Print de um terminal onde está impresso o texto 'Boas-vindas ao Projeto Lovelace!'">
+<img src="/Readme-content/boasvindas.png" alt="Print de um terminal onde está impresso o texto 'Boas-vindas ao Projeto Lovelace!'">
 </div>
 # 🤖 Projeto Lovelace
 #### LMS modular e minificado
@@ -18,7 +18,7 @@ Os requisitos de participação na hackaton podem ser conferidos [aqui.](https:/
 
 
 ## 🥔 POOtato
-<img src="/Readme-content/pootato.png"; alt="Print de um terminal onde aparece um robô impresso ASCII e o texto 'Olá! Eu sou o Pootato, seu companion de aprendizado!'">
+<img src="/Readme-content/pootato.png" alt="Print de um terminal onde aparece um robô impresso ASCII e o texto 'Olá! Eu sou o Pootato, seu companion de aprendizado!'">
 
 O POOtato é um companion já criado injetado diretamente no código para que seja possível testar algumas funcionalidades do Lovelace.
 
