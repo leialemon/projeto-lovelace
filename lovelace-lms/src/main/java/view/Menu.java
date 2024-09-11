@@ -111,7 +111,7 @@ public class Menu {
     }
 
     public void chamarMenuAdmin(Companion companion){
-        MenuAdmin menuAdmin = new MenuAdmin(companion);
+        MenuAdmin menuAdmin = new MenuAdmin(companion, this.companionController, this.moduloController, this.temaController, this.questaoController);
         menuAdmin.verificarAcesso();
     }
 
