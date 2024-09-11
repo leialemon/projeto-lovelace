@@ -51,7 +51,6 @@ public class Lovelace {
         menu.setQuestaoController(questaoControllerImpl);
 
         companionControllerImpl.criar(pootato);
-        moduloControllerImpl.criar(pootato.getModulos().getFirst());
 
         List<Companion> companions = companionControllerImpl.getList();
         Companion companionAtivo = null;

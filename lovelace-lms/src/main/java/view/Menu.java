@@ -31,9 +31,9 @@ public class Menu {
     }
 
     public void chamarMenus(){
-        System.out.println("############################");
-        System.out.println("Boas vindas ao projeto Lovelace!");
-        System.out.println("############################");
+        System.out.println("#################################");
+        System.out.println("Boas-vindas ao projeto Lovelace!");
+        System.out.println("#################################");
         System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do programa");
         System.out.println("1. Selecionar Companion");
         System.out.println("2. Criar novo Companion");
