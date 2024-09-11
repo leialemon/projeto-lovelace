@@ -1,30 +1,58 @@
 
-import model.Avatar;
 import model.Companion;
 import model.ZConteudoPOO;
 import controller.*;
-import view.CompanionView;
-import view.MenuImpl;
+import repository.RepositorioCompanion;
+import repository.RepositorioModulo;
+import repository.RepositorioQuestoes;
+import repository.RepositorioTema;
+import service.CompanionServiceInst;
+import service.ModuloService;
+import service.QuestaoServiceInst;
+import service.TemaService;
+import view.Menu;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Lovelace {
 
     // Dois modos de acesso: aluno e admin;
     // Aluno apenas lê as coisas e responde questões;
     // Admin consegue criar e editar
-    // Atribuições do método main: 1.checar os argumentos da linha de comando; 2. Instanciar Menus; 
+    // Atribuições do méttodo main: 1.checar os argumentos da linha de comando; 2. Instanciar Menus;
 
     public static void main(String[] args){
+        // injeção de dados de exemplo
         Companion pootato = ZConteudoPOO.instanciar();
-        ControllerInst controller = new ControllerInst();
-        MenuImpl menu = new MenuImpl();
-        menu.setController(controller);
-        controller.criarCompanion(pootato);
 
+        //Criação dos repositórios
+        RepositorioCompanion repositorioCompanion = new RepositorioCompanion();
+        RepositorioModulo repositorioModulo = new RepositorioModulo();
+        RepositorioTema repositorioTema = new RepositorioTema();
+        RepositorioQuestoes repositorioQuestoes = new RepositorioQuestoes();
 
-        List<Companion> companions = controller.getCompanions();
+        //Criação dos services
+        CompanionServiceInst companionService = new CompanionServiceInst(repositorioCompanion);
+        ModuloService moduloService = new ModuloService(repositorioModulo);
+        TemaService temaService = new TemaService(repositorioTema);
+        QuestaoServiceInst questaoService = new QuestaoServiceInst(repositorioQuestoes);
+
+        //Criação dos controllers
+        CompanionController companionController = new CompanionController(companionService);
+        ModuloController moduloController = new ModuloController(moduloService);
+        TemaController temaController = new TemaController(temaService);
+        QuestaoController questaoController = new QuestaoController(questaoService);
+
+        //Criação do menu principal
+        Menu menu = new Menu();
+        menu.setCompanionController(companionController);
+        menu.setModuloController(moduloController);
+        menu.setTemaController(temaController);
+        menu.setQuestaoController(questaoController);
+
+        companionController.criar(pootato);
+
+        List<Companion> companions = companionController.getList();
         Companion companionAtivo = null;
         boolean admin = false;
         int argumentos = args.length;

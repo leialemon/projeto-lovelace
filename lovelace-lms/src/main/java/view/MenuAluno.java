@@ -3,7 +3,7 @@ package view;
 import controller.ValidadorDeEntradas;
 import model.*;
 
-public class MenuAluno extends MenuImpl{
+public class MenuAluno extends Menu {
     Companion companionAtivo;
 
     public MenuAluno (Companion c){

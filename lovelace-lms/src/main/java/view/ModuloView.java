@@ -1,6 +1,9 @@
 package view;
 
+import controller.ValidadorDeEntradas;
 import model.*;
+
+import java.util.List;
 
 public class ModuloView {
     public static void mostrarTemas(Modulo m){
@@ -9,5 +12,17 @@ public class ModuloView {
             System.out.println(++i + ". " + t.getNome());
         }
         System.out.println(++i + ". Voltar à página anterior");
+    }
+
+    public static int mostrarModulos(List<Modulo> modulos){
+        System.out.println("\n ### Módulos Cadastrados ###");
+        int i = 2;
+        System.out.println(0 + ". Voltar ao menu anterior");
+        System.out.println("1 . Criar novo Módulo");
+        for (Modulo m : modulos){
+            System.out.println(++i + ". " + m.getNome());
+        }
+        int opcao = ValidadorDeEntradas.validarOpcoes(0,(modulos.size()+2));
+        return opcao;
     }
 }

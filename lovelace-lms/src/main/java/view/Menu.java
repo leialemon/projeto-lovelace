@@ -1,23 +1,36 @@
 package view;
 
-import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
-import controller.CompanionController;
-import controller.ControllerInst;
+
+import controller.Controller;
+import controller.QuestaoController;
 import controller.ValidadorDeEntradas;
-import service.*;
 import model.*;
 
 
-public class MenuImpl{
+public class Menu {
     public static Scanner entrada = new Scanner(System.in);
-    ControllerInst controller;
+    Controller<Companion> companionController;
+    Controller<Modulo> moduloController;
+    Controller<Tema> temaController;
+    Controller<Questao> questaoController;
 
-    public void setController(ControllerInst controller){
-        this.controller = controller;
+    public void setCompanionController(Controller<Companion> controller){
+        this.companionController = controller;
     }
 
+    public void setModuloController(Controller<Modulo> controller){
+        this.moduloController = controller;
+    }
+
+    public void setTemaController(Controller<Tema> temaController) {
+        this.temaController = temaController;
+    }
+
+    public void setQuestaoController(Controller<Questao> controller){
+        this.questaoController = controller;
+    }
 
     public void chamarMenus(){
         // Boas vindas geral
@@ -44,7 +57,7 @@ public class MenuImpl{
                 break;
             case 2:
                 Companion criado = CompanionView.criarCompanion();
-                CompanionView.criarCompanion2(controller.criarCompanion(criado), criado);
+                this.adicionarModulos(CompanionView.criarCompanion2(companionController.criar(criado), criado), criado);
                 break;
             case 3:
                 //Métoodo view de criação -> controller -> service -> repository
@@ -62,7 +75,7 @@ public class MenuImpl{
     public void selecionarCompanion(){
         System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do programa");
         //mostrar lista de companions
-        List<Companion> companions = controller.getCompanions();
+        List<Companion> companions = companionController.getList();
         int back = companions.size() + 1;
         int i = 0;
         for (Companion c : companions){
@@ -132,5 +145,16 @@ public class MenuImpl{
         System.out.println("Para mais informações, confira o arquivo README.");
         System.out.println("\n(pressione qualquer tecla para retornar ao menu principal)");
         entrada.next();
+    }
+
+    public void adicionarModulos(int opcao, Companion c){
+        if (opcao == 1){
+            int modulo = ModuloView.mostrarModulos(moduloController.getList());
+            Modulo escolhido = moduloController.getList().get(modulo-2);
+
+        } else {
+            System.out.println("Retornando ao menu principal.");
+            return;
+        }
     }
 }

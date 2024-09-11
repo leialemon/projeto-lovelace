@@ -26,8 +26,8 @@ public class MenuAdmin {
         // Editar Companion
         // Criar módulo
         // Editar módulo
-        // Criar Tema
-        // Editar Tema
+        // Criar TemaController
+        // Editar TemaController
         // Criar Exercício
         // Editar Exercício
         // Criar Questão

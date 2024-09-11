@@ -17,6 +17,6 @@ public class ExercicioView {
         }
         System.out.println("Resultado: Você acertou "+acertos+ " de "+ questoes.size()+ " questões.");
         System.out.println("(Pressione qualquer tecla para voltar ao menu anterior)");
-        MenuImpl.entrada.next();
+        Menu.entrada.next();
     }
 }

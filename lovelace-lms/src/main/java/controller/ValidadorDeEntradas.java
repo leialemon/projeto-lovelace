@@ -3,13 +3,13 @@ package controller;
 import java.util.Scanner;
 
 import model.Companion;
-import view.MenuImpl;
+import view.Menu;
 
 public class ValidadorDeEntradas {
     // Classe utilitária com métodos para validar entradas de usuário
 
     public static boolean checarSenha(Companion companion) {
-        Scanner entrada = MenuImpl.entrada;
+        Scanner entrada = Menu.entrada;
         boolean senhaCorreta = false;
         boolean sair = false;
         do {
@@ -29,7 +29,7 @@ public class ValidadorDeEntradas {
     }
 
     public static int validarOpcoes(int primeira, int ultima) {
-        Scanner entrada = MenuImpl.entrada;
+        Scanner entrada = Menu.entrada;
         boolean valido = false;
         int opcao = 0;
         String opt;
