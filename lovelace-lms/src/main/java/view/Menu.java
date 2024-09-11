@@ -31,15 +31,9 @@ public class Menu {
     }
 
     public void chamarMenus(){
-        // Boas vindas geral
-
-        // menus genéricos para seleção de companion e modo
-        //Selecionar Companion
-            //1. abrir companion (menu aluno)/ 2. editar companion (menu admin)
-        //Criar Companion
-        //Criar Módulo 
-        //Cadastrar Questão
-
+        System.out.println("############################");
+        System.out.println("Boas vindas ao projeto Lovelace!");
+        System.out.println("############################");
         System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do programa");
         System.out.println("1. Selecionar Companion");
         System.out.println("2. Criar novo Companion");
