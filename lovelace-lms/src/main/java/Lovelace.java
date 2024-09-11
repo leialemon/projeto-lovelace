@@ -6,10 +6,10 @@ import repository.RepositorioCompanion;
 import repository.RepositorioModulo;
 import repository.RepositorioQuestoes;
 import repository.RepositorioTema;
-import service.CompanionServiceInst;
-import service.ModuloService;
-import service.QuestaoServiceInst;
-import service.TemaService;
+import service.CompanionServiceImpl;
+import service.ModuloServiceImpl;
+import service.QuestaoServiceImpl;
+import service.TemaServiceImpl;
 import view.Menu;
 
 import java.util.List;
@@ -32,27 +32,27 @@ public class Lovelace {
         RepositorioQuestoes repositorioQuestoes = new RepositorioQuestoes();
 
         //Criação dos services
-        CompanionServiceInst companionService = new CompanionServiceInst(repositorioCompanion);
-        ModuloService moduloService = new ModuloService(repositorioModulo);
-        TemaService temaService = new TemaService(repositorioTema);
-        QuestaoServiceInst questaoService = new QuestaoServiceInst(repositorioQuestoes);
+        CompanionServiceImpl companionService = new CompanionServiceImpl(repositorioCompanion);
+        ModuloServiceImpl moduloServiceImpl = new ModuloServiceImpl(repositorioModulo);
+        TemaServiceImpl temaServiceImpl = new TemaServiceImpl(repositorioTema);
+        QuestaoServiceImpl questaoService = new QuestaoServiceImpl(repositorioQuestoes);
 
         //Criação dos controllers
-        CompanionController companionController = new CompanionController(companionService);
-        ModuloController moduloController = new ModuloController(moduloService);
-        TemaController temaController = new TemaController(temaService);
-        QuestaoController questaoController = new QuestaoController(questaoService);
+        CompanionController companionControllerImpl = new CompanionControllerImpl(companionService);
+        ModuloController moduloControllerImpl = new ModuloControllerImpl(moduloServiceImpl);
+        TemaController temaControllerImpl = new TemaControllerImpl(temaServiceImpl);
+        QuestaoController questaoControllerImpl = new QuestaoControllerImpl(questaoService);
 
         //Criação do menu principal
         Menu menu = new Menu();
-        menu.setCompanionController(companionController);
-        menu.setModuloController(moduloController);
-        menu.setTemaController(temaController);
-        menu.setQuestaoController(questaoController);
+        menu.setCompanionController(companionControllerImpl);
+        menu.setModuloController(moduloControllerImpl);
+        menu.setTemaController(temaControllerImpl);
+        menu.setQuestaoController(questaoControllerImpl);
 
-        companionController.criar(pootato);
+        companionControllerImpl.criar(pootato);
 
-        List<Companion> companions = companionController.getList();
+        List<Companion> companions = companionControllerImpl.getList();
         Companion companionAtivo = null;
         boolean admin = false;
         int argumentos = args.length;

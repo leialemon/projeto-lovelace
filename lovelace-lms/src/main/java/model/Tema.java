@@ -15,7 +15,11 @@ public class Tema {
     }
 
     public void addParagrafo(String texto){
-        this.texto.add(texto);
+        String regex = "[§]";
+        String[] textoSplit = texto.split(regex);
+        for (String t : textoSplit){
+            this.texto.add(t);
+        }
     }
 
     public void addExercicio(Exercicio exercicio){

@@ -5,9 +5,9 @@ import repository.RepositorioQuestoes;
 
 import java.util.List;
 
-public class QuestaoServiceInst implements Service<Questao>, QuestaoService{
+public class QuestaoServiceImpl implements QuestaoService{
     RepositorioQuestoes repositorioQuestoes;
-    public QuestaoServiceInst(RepositorioQuestoes repositorioQuestoes){
+    public QuestaoServiceImpl(RepositorioQuestoes repositorioQuestoes){
         this.repositorioQuestoes = repositorioQuestoes;
     }
 
@@ -17,8 +17,8 @@ public class QuestaoServiceInst implements Service<Questao>, QuestaoService{
     }
 
     @Override
-    public void excluir(Questao questao) {
-
+    public Status excluir(Questao questao) {
+        return this.repositorioQuestoes.apagar(questao);
     }
 
     @Override

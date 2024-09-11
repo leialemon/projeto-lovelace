@@ -1,4 +1,6 @@
 package service;
 
-public interface QuestaoService {
+import model.Questao;
+
+public interface QuestaoService extends Service<Questao>{
 }

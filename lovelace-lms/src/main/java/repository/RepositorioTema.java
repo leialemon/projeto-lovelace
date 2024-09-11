@@ -27,7 +27,7 @@ public class RepositorioTema implements Repositorio<Tema> {
 
     @Override
     public Status buscar(Tema t) {
-      if (t == null){
+        if (t == null){
             System.err.println("A pesquisa não pode ser feita com valores nulos!");
             return Status.INSTANCIA_NULA;
         }        

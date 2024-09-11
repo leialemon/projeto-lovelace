@@ -18,19 +18,13 @@ public class MenuAdmin {
             System.out.println("Encerrando o programa.");
             return;
         }
-        System.out.println("acesso permitido");
+        this.mostrarMenuInicial();
     }
 
     public void mostrarMenuInicial(){
-        // Criar Companion
         // Editar Companion
-        // Criar módulo
         // Editar módulo
-        // Criar TemaController
-        // Editar TemaController
-        // Criar Exercício
-        // Editar Exercício
-        // Criar Questão
-        // Editar Questão
+        // Excluir módulo do companion
+        // Excluir Companion
     }  
 }

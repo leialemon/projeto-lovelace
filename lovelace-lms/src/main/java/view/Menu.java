@@ -3,32 +3,30 @@ package view;
 import java.util.List;
 import java.util.Scanner;
 
-import controller.Controller;
-import controller.QuestaoController;
-import controller.ValidadorDeEntradas;
+import controller.*;
 import model.*;
 
 
 public class Menu {
     public static Scanner entrada = new Scanner(System.in);
-    Controller<Companion> companionController;
-    Controller<Modulo> moduloController;
-    Controller<Tema> temaController;
-    Controller<Questao> questaoController;
+    CompanionController companionController;
+    ModuloController moduloController;
+    TemaController temaController;
+    QuestaoController questaoController;
 
-    public void setCompanionController(Controller<Companion> controller){
+    public void setCompanionController(CompanionController controller){
         this.companionController = controller;
     }
 
-    public void setModuloController(Controller<Modulo> controller){
+    public void setModuloController(ModuloController controller){
         this.moduloController = controller;
     }
 
-    public void setTemaController(Controller<Tema> temaController) {
+    public void setTemaController(TemaController temaController) {
         this.temaController = temaController;
     }
 
-    public void setQuestaoController(Controller<Questao> controller){
+    public void setQuestaoController(QuestaoController controller){
         this.questaoController = controller;
     }
 
@@ -46,8 +44,7 @@ public class Menu {
         System.out.println("1. Selecionar Companion");
         System.out.println("2. Criar novo Companion");
         System.out.println("3. Criar Módulo");
-        System.out.println("4. Cadastrar Questão");
-        System.out.println("5. Ajuda");
+        System.out.println("4. Ajuda");
         int opcao = ValidadorDeEntradas.validarOpcoes(0,5);
         switch (opcao){
             case 0:
@@ -56,16 +53,12 @@ public class Menu {
                 this.selecionarCompanion();
                 break;
             case 2:
-                Companion criado = CompanionView.criarCompanion();
-                this.adicionarModulos(CompanionView.criarCompanion2(companionController.criar(criado), criado), criado);
+                this.criarCompanion();
                 break;
             case 3:
-                //Métoodo view de criação -> controller -> service -> repository
+                this.criarModulo();
                 break;
             case 4:
-                //Métoodo view de criação -> controller -> service -> repository
-                break;
-            case 5:
                 this.mostrarAjuda();
                 break;
         }
@@ -109,7 +102,6 @@ public class Menu {
                     break;
             }
         }
-
     }
 
 
@@ -147,14 +139,54 @@ public class Menu {
         entrada.next();
     }
 
+    public void criarCompanion(){
+        Companion criado = CompanionView.criarCompanion();
+        this.adicionarModulos(CompanionView.criarCompanion2(companionController.criar(criado), criado), criado);
+        //Refatorar quando tiver tempo
+    }
+
     public void adicionarModulos(int opcao, Companion c){
         if (opcao == 1){
             int modulo = ModuloView.mostrarModulos(moduloController.getList());
             Modulo escolhido = moduloController.getList().get(modulo-2);
-
+            this.companionController.adicionarModulo(escolhido, c);
         } else {
             System.out.println("Retornando ao menu principal.");
             return;
+        }
+    }
+
+    public void criarModulo(){
+        Modulo moduloCriado = ModuloView.criarModulo();
+        this.moduloController.criar(moduloCriado);
+        System.out.println("Agora crie um tema para seu módulo:");
+        System.out.println("1. Criar Tema");
+        System.out.println("2. Voltar ao menu inicial");
+        int opcao = ValidadorDeEntradas.validarOpcoes(1,2);
+
+        if (opcao == 2){
+            return;
+        }
+        this.criarTema(moduloCriado);
+    }
+
+    public void criarTema(Modulo modulo){
+        Tema temaCriado = TemaView.criarTema();
+        this.temaController.criar(temaCriado);
+        this.moduloController.adicionarTema(modulo,temaCriado);
+        System.out.println("Deseja criar um exercício para este tema?");
+        System.out.println("1. Sim");
+        System.out.println("2. Não");
+        int opcao = ValidadorDeEntradas.validarOpcoes(1,2);
+        if (opcao == 2){
+            return;
+        } else {
+            Exercicio exercicioCriado = ExercicioView.criarExercicio();
+            if (exercicioCriado.getQuestoes().isEmpty()){
+                System.out.println("Você não pode criar um exercício vazio, tente novamente.");
+                exercicioCriado = ExercicioView.criarExercicio();
+            }
+            this.temaController.adicionarExercicio(temaCriado, exercicioCriado);
         }
     }
 }

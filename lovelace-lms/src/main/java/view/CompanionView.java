@@ -78,21 +78,19 @@ public abstract class CompanionView{
     public static int criarCompanion2(Status status, Companion c){
         switch (status){
             case JA_EXISTE:
-                System.out.println("\n Ops, parece que esse companion já existe!");
+                System.out.println("\nOps, parece que esse companion já existe!");
                 break;
             case NOME_NULO:
-                System.out.println("\n Algo deu errado. Parece que você não inseriu um nome válido para seu companion :(");
+                System.out.println("\nAlgo deu errado. Parece que você não inseriu um nome válido para seu companion :(");
                 return 0;
             case SENHA_NULA:
-                System.out.println("\n Algo deu errado. Parece que você não inseriu uma senha válida para seu companion :(");
+                System.out.println("\nAlgo deu errado. Parece que você não inseriu uma senha válida para seu companion :(");
                 return 0;
         }
-        System.out.println("\n Oba! Seu companion está pronto!");
+        System.out.println("\nOba! Seu companion está pronto!");
         System.out.println("Deseja adicionar módulos a ele?");
         System.out.println("1. Sim");
         System.out.println("2. Não");
         return ValidadorDeEntradas.validarOpcoes(1,2);
-
     }
-
 }
