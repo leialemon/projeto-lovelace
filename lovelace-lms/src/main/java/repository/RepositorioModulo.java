@@ -4,10 +4,10 @@ import model.Modulo;
 import model.Questao;
 import service.Status;
 
-import java.util.List;
+import java.util.*;
 
 public class RepositorioModulo implements Repositorio<Modulo>{
-    List<Modulo> bancoDeModulos;
+    List<Modulo> bancoDeModulos = new ArrayList<>();
 
     public List<Modulo> getList(){
         return this.bancoDeModulos;

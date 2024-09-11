@@ -47,13 +47,13 @@ public abstract class CompanionView{
         String avatar = null;
         switch (robo) {
             case 1:
-                avatar = Avatar.getRobo1();
-                break;
-            case 2:
                 avatar = Avatar.getRobo2();
                 break;
-            case 3:
+            case 2:
                 avatar = Avatar.getRobo3();
+                break;
+            case 3:
+                avatar = Avatar.getRobo1();
                 break;
         }
         System.out.println("Novo companion");
