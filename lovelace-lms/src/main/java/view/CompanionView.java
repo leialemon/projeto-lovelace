@@ -1,6 +1,7 @@
 package view;
 import controller.ValidadorDeEntradas;
 import model.*;
+import service.Status;
 
 import java.util.Scanner;
 
@@ -25,7 +26,7 @@ public abstract class CompanionView{
     }
     public static Companion criarCompanion(){
         // Recebe do usuário os dados para instanciar um companion;
-        Scanner entrada = new Scanner(System.in);
+        Scanner entrada = MenuImpl.entrada;
         System.out.println("###############");
         System.out.println("\n Vamos criar um companion juntos, basta seguir os passos abaixo!\n");
         System.out.println("Primeiro digite um nome para o seu companion:");
@@ -62,6 +63,34 @@ public abstract class CompanionView{
         return c;
     }
 
-    public static void adicionarModulos(Companion c){}
+    public static void criarCompanion2(Status status, Companion c){
+        switch (status){
+            case JA_EXISTE:
+                System.out.println("\n Ops, parece que esse companion já existe!");
+                break;
+            case NOME_NULO:
+                System.out.println("\n Algo deu errado. Parece que você não inseriu um nome válido para seu companion :(");
+                return;
+            case SENHA_NULA:
+                System.out.println("\n Algo deu errado. Parece que você não inseriu uma senha válida para seu companion :(");
+                return;
+        }
+        System.out.println("\n Oba! Seu companion está pronto!");
+        System.out.println("Deseja adicionar módulos a ele?");
+        System.out.println("1. Sim");
+        System.out.println("2. Não");
+        int opcao = ValidadorDeEntradas.validarOpcoes(1,2);
+        switch (opcao){
+            case 1:
+                adicionarModulos(c);
+                break;
+            case 2:
+                System.out.println("\nRetornando ao menu principal");
+                return;
+        }
+    }
 
+    public static void adicionarModulos(Companion c){
+        System.out.println();
+    }
 }

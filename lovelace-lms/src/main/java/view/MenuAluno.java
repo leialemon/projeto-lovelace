@@ -2,7 +2,6 @@ package view;
 
 import controller.ValidadorDeEntradas;
 import model.*;
-import service.ServiceImpl;
 
 public class MenuAluno extends MenuImpl{
     Companion companionAtivo;
@@ -13,7 +12,9 @@ public class MenuAluno extends MenuImpl{
 
     public void mostrarMenuInicial(){
         System.out.println(companionAtivo.getAvatar());
-        System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do Companion:\n");
+        System.out.println("Se quiser me chamar ao iniciar o programa, utilize a flag '" + companionAtivo.getFlag() + "' na linha de comando ao executar o lovelace:");
+        System.out.println("java Lovelace " + companionAtivo.getFlag());
+        System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do Companion:");
         CompanionView.mostrarModulos(companionAtivo);
         int opcao = ValidadorDeEntradas.validarOpcoes(0, companionAtivo.getModulos().size());
         if (opcao == 0){
@@ -23,13 +24,13 @@ public class MenuAluno extends MenuImpl{
     }
 
     public void mostrarModulo(Modulo modulo){
-        System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do Companion:\n");
+        System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do Companion:");
         ModuloView.mostrarTemas(modulo);
         int menuAnterior = (modulo.getTemas().size()+1);
         int opcao = ValidadorDeEntradas.validarOpcoes(0, menuAnterior);
         if (opcao == 0){
             super.chamarMenus();
-        } else if (opcao == 1){
+        } else if (opcao == menuAnterior){
             this.mostrarMenuInicial();
         } else this.mostrarTema(modulo.getTemas().get(opcao-1));
     }

@@ -1,28 +1,23 @@
 package view;
 
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
-
 import controller.CompanionController;
+import controller.ControllerInst;
 import controller.ValidadorDeEntradas;
 import service.*;
 import model.*;
 
+
 public class MenuImpl{
-    Companion companion;
-    ServiceImpl service;
+    public static Scanner entrada = new Scanner(System.in);
+    ControllerInst controller;
 
-    public void setService(ServiceImpl s){
-        service = s;
+    public void setController(ControllerInst controller){
+        this.controller = controller;
     }
 
-    public ServiceImpl getService(){
-        return service;
-    }
-
-    public void setCompanionAtivo(Companion c){
-        this.companion = c;
-    }
 
     public void chamarMenus(){
         // Boas vindas geral
@@ -34,12 +29,13 @@ public class MenuImpl{
         //Criar Módulo 
         //Cadastrar Questão
 
-        System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do programa\n");
-        System.out.println("\n1. Selecionar Companion");
-        System.out.println("2. Criar Companion");
+        System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do programa");
+        System.out.println("1. Selecionar Companion");
+        System.out.println("2. Criar novo Companion");
         System.out.println("3. Criar Módulo");
         System.out.println("4. Cadastrar Questão");
-        int opcao = ValidadorDeEntradas.validarOpcoes(0,4);
+        System.out.println("5. Ajuda");
+        int opcao = ValidadorDeEntradas.validarOpcoes(0,5);
         switch (opcao){
             case 0:
                 return;
@@ -47,7 +43,8 @@ public class MenuImpl{
                 this.selecionarCompanion();
                 break;
             case 2:
-                CompanionController.criarCompanion(CompanionView.criarCompanion(), this.getService().getCompanionService());;
+                Companion criado = CompanionView.criarCompanion();
+                CompanionView.criarCompanion2(controller.criarCompanion(criado), criado);
                 break;
             case 3:
                 //Métoodo view de criação -> controller -> service -> repository
@@ -55,17 +52,21 @@ public class MenuImpl{
             case 4:
                 //Métoodo view de criação -> controller -> service -> repository
                 break;
+            case 5:
+                this.mostrarAjuda();
+                break;
         }
+        this.chamarMenus();
     }
 
     public void selecionarCompanion(){
-        System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do programa\n");
+        System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do programa");
         //mostrar lista de companions
-        List<Companion> companions = service.getCompanions();
+        List<Companion> companions = controller.getCompanions();
         int back = companions.size() + 1;
         int i = 0;
         for (Companion c : companions){
-            System.out.println(++i + c.getNome());
+            System.out.println(++i + ". "+ c.getNome());
         }
         System.out.println(back + ". Voltar ao menu anterior");
         int opcao = ValidadorDeEntradas.validarOpcoes(0, back);
@@ -76,7 +77,7 @@ public class MenuImpl{
             this.chamarMenus();
         } else {
             Companion companionEscolhido = companions.get(opcao - 1);
-            System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do programa\n");
+            System.out.println("\nEscolha uma das opções abaixo ou digite '0' para sair do programa");
             System.out.println("1. Acessar como aluno");
             System.out.println("2. Acessar como administrador");
             System.out.println("3. Voltar ao menu anterior");
@@ -107,5 +108,29 @@ public class MenuImpl{
     public void chamarMenuAdmin(Companion companion){
         MenuAdmin menuAdmin = new MenuAdmin(companion);
         menuAdmin.verificarAcesso();
+    }
+
+    public void mostrarAjuda(){
+        System.out.println("### INSTRUÇÕES ###");
+        System.out.println("O Lovelace é um LMS (Learning Management System) minificado e modular.");
+        System.out.println("Cada 'Companion' é um ambiente de aprendizado independente que abriga uma coleção de módulos com material didático e exercícios.");
+        System.out.println("Para criar um companion, selecione a opção 'Criar novo companion' no menu principal e siga as instruções correspondentes.");
+        System.out.println("Para acessar um companion existente, selecione a opção 'Selecionar companion' no menu principal ou inicie o programa com a flag correspondente.");
+        System.out.println("(pressione qualquer tecla para continuar)");
+        entrada.next();
+        System.out.println("\nCada companion pode ser acessado em dois modos:");
+        System.out.println("1. Modo aluno - permite apenas a visualização do conteúdo do companion e resolução de exercícios.");
+        System.out.println("2. Modo administrador - permite editar ou excluir o companion.");
+        System.out.println("\nPara acessar o modo administrador é necessário fornecer uma senha, configurada no momento da criação do companion.");
+        System.out.println("\nO modo administrador está disponível no menu de seleção de companion ou ao iniciar o programa, utilizando-se a flag do companion e a flag '--admin.'");
+        System.out.println("Exemplo: java Lovelace --companion -- admin");
+        System.out.println("(pressione qualquer tecla para continuar)");
+        entrada.next();
+        System.out.println("\nCada módulo de um companion representa o domínio de uma disciplina.");
+        System.out.println("Eles são subdivididos em temas, correspondentes aos tópicos daquela disciplina. Cada tema contém um texto didático e exercícios.");
+        System.out.println("\nTodos os módulos, temas e exercícios criados ficam salvos em um banco de dados e podem ser adicionados a novos companions.");
+        System.out.println("Para mais informações, confira o arquivo README.");
+        System.out.println("\n(pressione qualquer tecla para retornar ao menu principal)");
+        entrada.next();
     }
 }

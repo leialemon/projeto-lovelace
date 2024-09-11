@@ -2,7 +2,6 @@ package view;
 
 import controller.ValidadorDeEntradas;
 import model.Companion;
-import service.ServiceImpl;
 
 
 public class MenuAdmin {
@@ -18,6 +17,7 @@ public class MenuAdmin {
             System.out.println("Encerrando o programa.");
             return;
         }
+        System.out.println("acesso permitido");
     }
 
     public void mostrarMenuInicial(){

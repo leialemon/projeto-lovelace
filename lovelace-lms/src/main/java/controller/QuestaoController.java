@@ -1,19 +1,20 @@
 package controller;
 
 import model.Questao;
+import view.MenuImpl;
+
 import java.util.List;
 import java.util.Scanner;
 
 public class QuestaoController {
     public static boolean responderQuestaoAberta(Questao q) {
-        Scanner entrada = new Scanner(System.in);
+        Scanner entrada = MenuImpl.entrada;
         String tentativa = entrada.nextLine();
-        entrada.close();
         return q.corrigir(tentativa);
     }
 
     public static boolean responderQuestaoFechada(Questao q, List<String> alternativas){
-        Scanner entrada = new Scanner(System.in);
+        Scanner entrada = MenuImpl.entrada;
         String resposta = "";
         boolean valida = false;
         do{
@@ -39,7 +40,6 @@ public class QuestaoController {
                 System.out.println("Alternativa inválida! Por favor, tente novamente!");
             }
         } while(!valida);
-        entrada.close();
         return q.corrigir(resposta);
     }
 }

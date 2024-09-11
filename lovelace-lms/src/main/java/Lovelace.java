@@ -1,11 +1,13 @@
+
+import model.Avatar;
 import model.Companion;
 import model.ZConteudoPOO;
 import controller.*;
-import service.ServiceImpl;
 import view.CompanionView;
 import view.MenuImpl;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Lovelace {
 
@@ -15,17 +17,14 @@ public class Lovelace {
     // Atribuições do método main: 1.checar os argumentos da linha de comando; 2. Instanciar Menus; 
 
     public static void main(String[] args){
-
-        System.out.println(CompanionView.getRobos());
-        System.out.println();
         Companion pootato = ZConteudoPOO.instanciar();
-        ServiceImpl service = new ServiceImpl();
-        List<Companion> companions = service.getCompanions();
+        ControllerInst controller = new ControllerInst();
         MenuImpl menu = new MenuImpl();
-        menu.setService(service);
-        service.getRepoCompanion().adicionar(pootato);
-        
+        menu.setController(controller);
+        controller.criarCompanion(pootato);
 
+
+        List<Companion> companions = controller.getCompanions();
         Companion companionAtivo = null;
         boolean admin = false;
         int argumentos = args.length;
@@ -55,5 +54,7 @@ public class Lovelace {
         } else {
             menu.chamarMenus();
         }
+        System.out.println("Desenvolvido por Juliana Barros");
+        System.out.println("contato: julianabarrosf@protonmail.com");
     }    
 }

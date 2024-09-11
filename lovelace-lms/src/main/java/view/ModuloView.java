@@ -8,6 +8,6 @@ public class ModuloView {
         for (Tema t : m.getTemas()){
             System.out.println(++i + ". " + t.getNome());
         }
-        System.out.println(++i + "Voltar à página anterior");
+        System.out.println(++i + ". Voltar à página anterior");
     }
 }
