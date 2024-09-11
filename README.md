@@ -1,4 +1,4 @@
-<img style="margin-left: auto; margin-right: auto;" src="/Readme-content/boasvindas.png;" alt="Print de um terminal onde está impresso o texto 'Boas-vindas ao Projeto Lovelace!';">
+<img style="margin-left: auto; margin-right: auto;" src="/Readme-content/boasvindas.png;" alt="Print de um terminal onde está impresso o texto 'Boas-vindas ao Projeto Lovelace!';" >
 
 # 🤖 Projeto Lovelace
 #### LMS modular e minificado
@@ -34,7 +34,7 @@ Para acessar um companion diretamente no modo administrador é preciso executar 
 
 ## 🥔 POOtato
 
-<img style="margin-left: auto; margin-right: auto;" src="/Readme-content/pootato.png;" alt="Print de um terminal onde aparece um robô impresso ASCII e o texto 'Olá! Eu sou o Pootato, seu companion de aprendizado!';">
+<img style="margin-left: auto; margin-right: auto;" src="/Readme-content/pootato.png;" alt="Print de um terminal onde aparece um robô impresso ASCII e o texto 'Olá! Eu sou o Pootato, seu companion de aprendizado!';" >
 
 
 O POOtato é um companion já criado injetado diretamente no código para que seja possível testar algumas funcionalidades do Lovelace.
