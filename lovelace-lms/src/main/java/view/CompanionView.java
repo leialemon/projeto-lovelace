@@ -23,7 +23,7 @@ public abstract class CompanionView{
             System.out.println(++i + ". " + modulo.getNome());
         }
     }
-    public static void criarCompanion(){
+    public static Companion criarCompanion(){
         // Recebe do usuário os dados para instanciar um companion;
         Scanner entrada = new Scanner(System.in);
         System.out.println("###############");
@@ -59,6 +59,7 @@ public abstract class CompanionView{
         if (avatar != null){
             c.setAvatar(avatar);
         }
+        return c;
     }
 
     public static void adicionarModulos(Companion c){}

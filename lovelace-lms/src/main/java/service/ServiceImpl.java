@@ -8,16 +8,30 @@ import repository.*;
 import java.util.List;
 
 public class ServiceImpl<T> implements Service<T>{
-    RepositorioCompanion repoCompanion;
-    RepositorioModulo repoModulo;
-    RepositorioTema repoTema;
-    RepositorioQuestoes repoQuestao;
+    protected RepositorioCompanion repoCompanion;
+    protected RepositorioModulo repoModulo;
+    protected RepositorioTema repoTema;
+    protected RepositorioQuestoes repoQuestao;
+
+    private CompanionServiceImpl companionService;
+    private QuestaoServiceImpl questaoService;
 
     public ServiceImpl() {
         repoCompanion = new RepositorioCompanion();
         repoModulo = new RepositorioModulo();
         repoTema = new RepositorioTema();
         repoQuestao = new RepositorioQuestoes();
+
+        companionService = new CompanionServiceImpl();
+        questaoService = new QuestaoServiceImpl();
+    }
+
+    public CompanionServiceImpl getCompanionService(){
+        return this.companionService;
+    }
+
+    public QuestaoServiceImpl getQuestaoService(){
+        return this.questaoService;
     }
 
     public RepositorioCompanion getRepoCompanion(){
@@ -40,7 +54,8 @@ public class ServiceImpl<T> implements Service<T>{
         return this.repoQuestao.getList();
     }
 
-    public void criar(T t) {}
+    public Status criar(T t) {
+        return Status.TUDO_CERTO;}
     public void excluir(T t) {}
     public void editar(T t) {}
     public T mostrar(T t) {

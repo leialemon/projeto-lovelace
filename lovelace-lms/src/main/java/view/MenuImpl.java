@@ -3,6 +3,7 @@ package view;
 import java.util.List;
 import java.util.Scanner;
 
+import controller.CompanionController;
 import controller.ValidadorDeEntradas;
 import service.*;
 import model.*;
@@ -46,7 +47,7 @@ public class MenuImpl{
                 this.selecionarCompanion();
                 break;
             case 2:
-                //Métoodo view de criação -> controller -> service -> repository
+                CompanionController.criarCompanion(CompanionView.criarCompanion(), this.getService().getCompanionService());;
                 break;
             case 3:
                 //Métoodo view de criação -> controller -> service -> repository
