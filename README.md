@@ -12,6 +12,9 @@ O projeto teve que atender a uma série de requisitos que limitaram sua funciona
 
 Os requisitos de participação na hackaton podem ser conferidos [aqui.](https://gist.github.com/rafarocha#ada-lovelace-pootathon-poompetition-poodyssey)
 
+## 📑 Instruções
+
+
 
 ## 🥔 POOtato
 <img src="/Readme-content/pootato.png">
@@ -29,6 +32,8 @@ Para entrar no modo de administrador do POOtato, você pode:
 
 🛂 A senha de administrador do POOtato é "admin".
 
+
+##### Créditos
 Artes ASCII por: https://ascii.co.uk/art/robot
 
 Conteúdos do pootato criados pelo chatGPT com o GPT-4o.
