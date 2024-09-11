@@ -17,13 +17,13 @@ public class ModuloView {
 
     public static int mostrarModulos(List<Modulo> modulos){
         System.out.println("\n ### Módulos Cadastrados ###");
-        int i = 2;
+        int i = 1;
         System.out.println(0 + ". Voltar ao menu anterior");
         System.out.println("1 . Criar novo Módulo");
         for (Modulo m : modulos){
             System.out.println(++i + ". " + m.getNome());
         }
-        int opcao = ValidadorDeEntradas.validarOpcoes(0,(modulos.size()+2));
+        int opcao = ValidadorDeEntradas.validarOpcoes(0,(modulos.size()+1));
         return opcao;
     }
 
