@@ -48,7 +48,7 @@ Para entrar no modo de administrador do POOtato, você pode:
 1. Selecionar este modo no menu de acesso;
 2. Iniciar o programa na linha de comando com os argumentos "--pootato" e "--admin";
 
-🛂 A senha de administrador do POOtato é "admin".
+#### 🛂 A senha de administrador do POOtato é "admin".
 
 
 ### Créditos
