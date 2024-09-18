@@ -19,7 +19,7 @@ Os requisitos de participação na hackaton podem ser conferidos [aqui.](https:/
 
 ## 📑 Instruções
 
-Para usar o Lovelace, você deve compilar e executar a classe java 'Lovelace.java'. Isto pode ser feito de forma manual ou automática, através da execução do script bash ['lovelace.sh'](/lovelace.sh).
+Para usar o Lovelace, você deve compilar e executar a classe java 'Lovelace.java'. Isto pode ser feito de forma manual ou automática, através da execução do script bash [`lovelace.sh`](/lovelace.sh).
 
 A partir daí é possível usar o lovelace para criar novos companions ou acessar companions existentes. 
 
@@ -47,17 +47,20 @@ O POOtato é um companion já criado injetado diretamente no código para que se
 Para chamar o POOtato, você pode:
 1. Selecioná-lo no menu principal;
 2. Iniciar o programa na linha de comando com o argumento "--pootato";
-'''
+   
+```
 java Lovelace --pootato
-'''
-3. Executar o script ['pootato.sh'](/pootato.sh).
+```
+
+3. Executar o script [`pootato.sh`](/pootato.sh).
 
 Para entrar no modo de administrador do POOtato, você pode:
 1. Selecionar este modo no menu de acesso;
 2. Iniciar o programa na linha de comando com os argumentos "--pootato" e "--admin";
-'''
+   
+```
 java Lovelace --pootato --admin
-'''
+```
 
 #### 🛂 A senha de administrador do POOtato é "admin".
 
