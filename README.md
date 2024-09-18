@@ -2,7 +2,10 @@
 
 # 🤖 Projeto Lovelace
 #### LMS modular e minificado
-O projeto Lovelace foi desenvolvido para a hackathon do módulo Programação Orientada a Objetos II, do curso Ada B3 Inclua+.
+O projeto Lovelace foi desenvolvido para a [hackathon](https://gist.github.com/rafarocha/6bbc76e474a54c439966db449b5ed19a) do módulo Programação Orientada a Objetos II, do curso Ada B3 Inclua+.
+
+### 🏆 Projeto vencedor nas categorias de Melhor Design Visual Console e Melhor Projeto!
+
 
 É o projeto de um LMS (Learning Management System) modular e minificado, onde os usuários podem acessar conteúdos educacionais.
 
@@ -10,7 +13,7 @@ A proposta da modularidade é permitir a criação rápida de vários ambientes 
 
 O projeto teve que atender a uma série de requisitos que limitaram sua funcionalidade, como a proibição do uso de ferramentas de persistência de dados e do uso de interfaces gráficas, por isso possui uma versão minificada das operações.
 
-Os requisitos de participação na hackaton podem ser conferidos [aqui.](https://gist.github.com/rafarocha#ada-lovelace-pootathon-poompetition-poodyssey)
+Os requisitos de participação na hackaton podem ser conferidos [aqui.](https://gist.github.com/rafarocha/6bbc76e474a54c439966db449b5ed19a)
 
 ## 📑 Instruções
 
