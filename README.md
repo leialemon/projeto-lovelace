@@ -15,7 +15,7 @@ A proposta da modularidade é permitir a criação rápida de vários ambientes 
 
 O projeto teve que atender a uma série de requisitos que limitaram sua funcionalidade, como a proibição do uso de ferramentas de persistência de dados e do uso de interfaces gráficas, por isso possui uma versão minificada das operações.
 
-Os requisitos de participação na hackaton podem ser conferidos [aqui.](https://gist.github.com/rafarocha/6bbc76e474a54c439966db449b5ed19a)
+Os requisitos de participação na hackaton podem ser conferidos [aqui.](https://gist.github.com/rafarocha/6bbc76e474a54c439966db449b5ed19a#08-requisitos-)
 
 ## 📑 Instruções
 
